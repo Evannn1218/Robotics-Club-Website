@@ -14,10 +14,15 @@ header {
     justify-content: space-between;
 }
 
-header img {
-    height: 50px;
+.logo img {
+    max-height: 66px; /* 调整图片高度为当前高度的 2.2 倍 */
     width: auto;
     margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.1);
 }
 
 nav ul {
@@ -51,8 +56,8 @@ main {
     display: flex;
     align-items: center;
     background-color: #000;
-    width: 300px;
-    height: 100px;
+    width: 500px; /* Increased width to make it more rectangular */
+    height: 150px; /* Increased height to maintain proportion */
     margin: 2rem auto;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -60,7 +65,7 @@ main {
 }
 
 .team-button img {
-    height: 80px;
+    height: 100px; /* Adjusted height to fit within the new dimensions */
     width: auto;
     margin: 0 1rem;
 }
