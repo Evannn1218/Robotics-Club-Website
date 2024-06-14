@@ -15,7 +15,7 @@ header {
 }
 
 .logo img {
-    max-height: 66px; /* 调整图片高度为当前高度的 2.2 倍 */
+    max-height: 66px;
     width: auto;
     margin-right: 1rem;
     transition: transform 0.3s ease;
