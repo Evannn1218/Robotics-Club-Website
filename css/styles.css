@@ -5,30 +5,27 @@ body {
     color: #333;
     overflow-x: hidden; /* 防止水平滚动条 */
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem 0; /* 压缩上下内边距 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed; /* 固定位置 */
+    position: absolute; /* 绝对定位 */
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 使 logo 和导航菜单在 header 内两端对齐 */
     z-index: 10; /* 确保 header 在视频上层 */
+    padding: 0.5rem 1rem;
     box-sizing: border-box; /* 确保内边距不会增加额外的空间 */
-}
-
-.logo {
-    position: absolute;
-    left: 1rem;
+    background: transparent; /* 去掉黑框 */
 }
 
 .logo img {
-    max-height: 50px; /* 压缩 logo 的高度 */
+    max-height: 50px; /* 保持 logo 的高度 */
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -37,14 +34,20 @@ header {
     transform: scale(1.1);
 }
 
+nav {
+    flex-grow: 1; /* 使导航栏占据剩余空间 */
+    display: flex;
+    justify-content: flex-end;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 0.5rem; /* 压缩导航链接之间的间距 */
+    gap: 2rem; /* 导航链接之间的间距 */
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
     box-sizing: border-box;
 }
 
@@ -54,10 +57,10 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* 白色字体 */
     text-decoration: none;
-    font-size: 0.9rem; /* 缩小字体 */
-    transition: color 0.3s ease;
+    font-size: 1rem; /* 初始字体大小 */
+    transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -67,13 +70,14 @@ nav ul li a:hover {
 .video-container {
     position: relative;
     width: 100%;
-    height: calc(60vh - 20px); /* 调整视频高度，裁剪20px */
+    height: 60vh; /* 保持视频高度为60vh */
     overflow: hidden;
     margin: 0;
     box-sizing: border-box;
     display: flex;
     justify-content: center; /* 确保视频居中 */
     align-items: center;
+    flex-shrink: 0;
 }
 
 .video-container video {
@@ -91,24 +95,54 @@ nav ul li a:hover {
     z-index: 1;
     box-sizing: border-box;
     margin-top: 0; /* 确保内容紧接在视频下方开始 */
+    flex: 1;
 }
 
-@media (max-width: 768px) {
-    .video-container {
-        height: calc(50vh - 20px); /* 在移动设备上将视频高度设置为50%视口高度 */
-    }
-    .content {
-        margin-top: 0; /* 确保内容紧接在视频下方开始 */
-    }
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
-@media (max-width: 480px) {
-    .video-container {
-        height: calc(40vh - 20px); /* 在小屏幕设备上将视频高度设置为40%视口高度 */
-    }
-    .content {
-        margin-top: 0; /* 确保内容紧接在视频下方开始 */
-    }
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin: 0.5rem 0;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 0.5rem 2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+form button:hover {
+    transform: scale(1.1);
+    background-color: #555;
+}
+
+form button:active {
+    transform: scale(1);
 }
 
 .members-wall {
@@ -119,16 +153,17 @@ nav ul li a:hover {
 }
 
 .member {
-    width: calc(50% - 1rem);
+    width: calc(20% - 1rem); /* 每行显示5个成员 */
     text-align: center;
+    background-color: #fff; /* 设置模块背景为白色 */
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .member img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    background-color: #000;
-    object-fit: contain;
+    height: 200px; /* 设置固定高度，确保所有图片大小一致 */
+    object-fit: cover; /* 确保图片填充整个容器 */
 }
 
 .member h3 {
@@ -168,85 +203,33 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    box-sizing: border-box;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-form label {
-    margin: 0.5rem 0;
-}
-
-form input, form textarea {
-    width: 80%;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: 0.5rem 2rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-form button:hover {
-    transform: scale(1.1);
-    background-color: #555;
-}
-
-form button:active {
-    transform: scale(1);
-}
-
 /* 媒体查询 */
-@media (min-width: 768px) {
-    header {
-        padding: 1rem 0; /* 压缩上下内边距 */
+@media (max-width: 768px) {
+    .video-container {
+        height: 50vh; /* 在移动设备上将视频高度设置为50%视口高度 */
     }
-
-    nav ul {
-        gap: 1rem;
+    .content {
+        margin-top: 0; /* 确保内容紧接在视频下方开始 */
     }
-
     nav ul li a {
-        font-size: 1rem; /* 调整字体大小 */
+        font-size: 0.9rem; /* 调整字体大小 */
     }
-
-    .members-wall {
-        gap: 2rem;
-    }
-
     .member {
-        width: calc(20% - 2rem);
+        width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
     }
+}
 
-    .team-button {
-        width: 500px;
-        height: 150px;
+@media (max-width: 480px) {
+    .video-container {
+        height: 40vh; /* 在小屏幕设备上将视频高度设置为40%视口高度 */
     }
-
-    .team-button img {
-        height: 100px;
+    .content {
+        margin-top: 0; /* 确保内容紧接在视频下方开始 */
     }
-
-    .team-button .team-text {
-        font-size: 1.5rem;
+    nav ul li a {
+        font-size: 0.8rem; /* 调整字体大小 */
+    }
+    .member {
+        width: calc(50% - 1rem); /* 在小屏幕设备上每行显示2个成员 */
     }
 }

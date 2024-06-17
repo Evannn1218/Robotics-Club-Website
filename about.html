@@ -21,24 +21,44 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <div class="video-container">
+        <video autoplay muted loop playsinline webkit-playsinline>
+            <source src="videos/About.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="content">
         <h1>About Us</h1>
-        <p>The NYU Shanghai Robotics Club is committed to fostering interest and expertise in robotics among students through hands-on projects and competitions.</p>
-        
-        <!-- VEX U Team Block -->
-        <a href="vex-u-team.html" class="team-button">
+        <p>Welcome to the NYU Shanghai Robotics Club! Learn more about our mission and activities.</p>
+        <div class="team-button" onclick="showVexUTeam()">
             <img src="images/VEX U.png" alt="VEX U Team">
             <div class="team-text">VEX U Team</div>
-        </a>
-
-        <!-- Robomaster Team Block -->
-        <a href="robomaster-team.html" class="team-button">
+        </div>
+        <div id="vex-u-team" style="display: none;">
+            <h2>VEX U Team</h2>
+            <p>Our VEX U team includes: Evan, Maxon, Eric.</p>
+        </div>
+        <div class="team-button" onclick="showRobomasterTeam()">
             <img src="images/Robomaster.png" alt="Robomaster Team">
             <div class="team-text">Robomaster Team</div>
-        </a>
-    </main>
+        </div>
+        <div id="robomaster-team" style="display: none;">
+            <h2>Robomaster Team</h2>
+            <p>Under construction.</p>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 NYU Shanghai Robotics Club</p>
     </footer>
+    <script>
+        function showVexUTeam() {
+            document.getElementById('vex-u-team').style.display = 'block';
+            document.getElementById('robomaster-team').style.display = 'none';
+        }
+        function showRobomasterTeam() {
+            document.getElementById('robomaster-team').style.display = 'block';
+            document.getElementById('vex-u-team').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
