@@ -3,21 +3,27 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    overflow-x: hidden; /* 防止水平滚动条 */
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem;
+    padding: 2rem 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 1rem;
 }
 
 .logo img {
-    max-height: 66px;
+    max-height: 60px;
     width: auto;
-    margin-right: 1rem;
     transition: transform 0.3s ease;
 }
 
@@ -30,15 +36,13 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 1rem;
+    gap: 2rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
@@ -46,26 +50,74 @@ nav ul li a:hover {
     color: #f0c14b;
 }
 
-main {
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保视频覆盖容器并适配不同尺寸 */
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.content {
     padding: 2rem;
     text-align: center;
-    min-height: calc(100vh - 200px); /* Ensure main content height */
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.members-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.member {
+    width: calc(20% - 2rem);
+    text-align: center;
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    background-color: #000;
+    object-fit: contain;
+}
+
+.member h3 {
+    margin: 0.5rem 0 0 0;
+}
+
+.member p {
+    margin: 0.25rem 0 0 0;
 }
 
 .team-button {
     display: flex;
     align-items: center;
     background-color: #000;
-    width: 500px; /* Increased width to make it more rectangular */
-    height: 150px; /* Increased height to maintain proportion */
+    width: 500px;
+    height: 150px;
     margin: 2rem auto;
     cursor: pointer;
     transition: transform 0.3s ease;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 .team-button img {
-    height: 100px; /* Adjusted height to fit within the new dimensions */
+    height: 100px;
     width: auto;
     margin: 0 1rem;
 }
