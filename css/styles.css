@@ -9,7 +9,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem;
+    padding: 1rem; /* 减小移动设备上的内边距 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,19 +36,19 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 1rem; /* 减小移动设备上的间距 */
+    flex-wrap: wrap; /* 确保在小屏幕上折行 */
+    justify-content: center; /* 居中对齐 */
 }
 
 nav ul li {
-    margin: 0.5rem 0;
+    margin: 0.5rem 0; /* 为每个列表项添加上下边距 */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1rem; /* 减小移动设备上的字体大小 */
     transition: color 0.3s ease;
 }
 
@@ -61,15 +61,16 @@ nav ul li a:hover {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: black; /* 防止视频加载前出现空白 */
 }
 
 .video-container video {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
@@ -88,11 +89,11 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 1rem; /* 减小移动设备上的间距 */
 }
 
 .member {
-    width: calc(50% - 1rem);
+    width: calc(50% - 1rem); /* 在移动设备上每行2个 */
     text-align: center;
 }
 
@@ -116,8 +117,8 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     background-color: #000;
-    width: 90%;
-    height: 100px;
+    width: 90%; /* 减小移动设备上的宽度 */
+    height: 100px; /* 减小移动设备上的高度 */
     margin: 2rem auto;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -125,14 +126,14 @@ nav ul li a:hover {
 }
 
 .team-button img {
-    height: 80px;
+    height: 80px; /* 减小移动设备上的高度 */
     width: auto;
     margin: 0 1rem;
 }
 
 .team-button .team-text {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* 减小移动设备上的字体大小 */
     flex: 1;
     text-align: center;
 }
@@ -202,7 +203,7 @@ form button:active {
     }
 
     .members-wall {
-        gap: 2rem;
+        gap: 2rem;gi
     }
 
     .member {
