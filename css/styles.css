@@ -74,6 +74,7 @@ nav ul li a:hover {
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
+    pointer-events: none; /* 禁用视频播放框 */
 }
 
 .content {
