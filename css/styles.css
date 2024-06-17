@@ -65,37 +65,19 @@ nav ul li a:hover {
 .video-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* 确保视频占满整个视口高度 */
+    height: 60vh; /* 视频占据视口高度的60% */
     overflow: hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    z-index: 0; /* 确保视频在header下方 */
 }
 
 .video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
     pointer-events: none; /* 禁用视频播放框 */
-}
-
-@media (max-width: 768px) {
-    .video-container {
-        height: 50vh; /* 在移动设备上将视频高度设置为50%视口高度 */
-    }
-    .video-container video {
-        object-fit: cover; /* 确保视频在移动设备上完整显示 */
-    }
-}
-
-@media (max-width: 480px) {
-    .video-container {
-        height: 40vh; /* 在小屏幕设备上将视频高度设置为40%视口高度 */
-    }
 }
 
 .content {
@@ -105,6 +87,25 @@ nav ul li a:hover {
     position: relative;
     z-index: 1;
     box-sizing: border-box;
+    margin-top: 0; /* 确保内容紧接在视频下方开始 */
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        height: 50vh; /* 在移动设备上将视频高度设置为50%视口高度 */
+    }
+    .content {
+        margin-top: 0; /* 确保内容紧接在视频下方开始 */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        height: 40vh; /* 在小屏幕设备上将视频高度设置为40%视口高度 */
+    }
+    .content {
+        margin-top: 0; /* 确保内容紧接在视频下方开始 */
+    }
 }
 
 .members-wall {
