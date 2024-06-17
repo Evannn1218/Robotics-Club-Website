@@ -9,7 +9,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem; /* 减小移动设备上的内边距 */
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,19 +36,19 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1rem; /* 减小移动设备上的间距 */
-    flex-wrap: wrap; /* 确保在小屏幕上折行 */
-    justify-content: center; /* 居中对齐 */
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 0.5rem 0; /* 为每个列表项添加上下边距 */
+    margin: 0.5rem 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem; /* 减小移动设备上的字体大小 */
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
@@ -68,8 +68,8 @@ nav ul li a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transform: translate(-50%, -50%);
     z-index: -1;
@@ -88,11 +88,11 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem; /* 减小移动设备上的间距 */
+    gap: 1rem;
 }
 
 .member {
-    width: calc(50% - 1rem); /* 在移动设备上每行2个 */
+    width: calc(50% - 1rem);
     text-align: center;
 }
 
@@ -116,8 +116,8 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     background-color: #000;
-    width: 90%; /* 减小移动设备上的宽度 */
-    height: 100px; /* 减小移动设备上的高度 */
+    width: 90%;
+    height: 100px;
     margin: 2rem auto;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -125,14 +125,14 @@ nav ul li a:hover {
 }
 
 .team-button img {
-    height: 80px; /* 减小移动设备上的高度 */
+    height: 80px;
     width: auto;
     margin: 0 1rem;
 }
 
 .team-button .team-text {
     color: #fff;
-    font-size: 1.2rem; /* 减小移动设备上的字体大小 */
+    font-size: 1.2rem;
     flex: 1;
     text-align: center;
 }
