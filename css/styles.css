@@ -1,3 +1,4 @@
+/* 通用样式 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,6 +11,7 @@ body {
     min-height: 100vh;
 }
 
+/* 页眉样式 */
 header {
     position: absolute; /* 绝对定位 */
     top: 0;
@@ -24,13 +26,13 @@ header {
     background: transparent; /* 去掉黑框 */
 }
 
-.logo img {
+header .logo img {
     max-height: 50px; /* 保持 logo 的高度 */
     width: auto;
     transition: transform 0.3s ease;
 }
 
-.logo:hover img {
+header .logo:hover img {
     transform: scale(1.1);
 }
 
@@ -67,6 +69,7 @@ nav ul li a:hover {
     color: #f0c14b;
 }
 
+/* 视频容器样式 */
 .video-container {
     position: relative;
     width: 100%;
@@ -87,6 +90,7 @@ nav ul li a:hover {
     pointer-events: none; /* 禁用视频播放框 */
 }
 
+/* 内容样式 */
 .content {
     padding: 2rem;
     text-align: center;
@@ -102,11 +106,13 @@ nav ul li a:hover {
     margin-bottom: 2rem; /* 扩大各部分之间的间隔 */
 }
 
+/* 去掉有序号标点 */
 .no-bullets {
-    list-style: none; /* 去掉有序号标点 */
+    list-style: none;
     padding: 0;
 }
 
+/* 事件模块样式 */
 .event-module {
     display: flex;
     align-items: center;
@@ -135,6 +141,7 @@ nav ul li a:hover {
     margin: 0.5rem 0 0 0;
 }
 
+/* 页脚样式 */
 footer {
     background-color: #333;
     color: #fff;
@@ -146,6 +153,21 @@ footer {
     flex-shrink: 0;
 }
 
+/* 管理员登录样式 */
+.admin-login {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.8rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-login:hover {
+    text-decoration: underline;
+}
+
+/* 表单样式 */
 form {
     display: flex;
     flex-direction: column;
@@ -182,6 +204,55 @@ form button:active {
     transform: scale(1);
 }
 
+/* 登录页面样式 */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container h2 {
+    margin-bottom: 2rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.login-container form label {
+    margin-bottom: 0.5rem;
+}
+
+.login-container form input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container form button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.login-container form button:hover {
+    transform: scale(1.05);
+    background-color: #555;
+}
+
+.login-container form button:active {
+    transform: scale(1);
+}
+
+/* 成员墙样式 */
 .members-wall {
     display: flex;
     flex-wrap: wrap;
@@ -211,6 +282,7 @@ form button:active {
     margin: 0.25rem 0 0 0;
 }
 
+/* 团队按钮样式 */
 .team-button {
     display: flex;
     align-items: center;
@@ -240,7 +312,7 @@ form button:active {
     transform: scale(1.1);
 }
 
-/* 媒体查询 */
+/* 响应式设计 */
 @media (max-width: 768px) {
     .video-container {
         height: 50vh; /* 在移动设备上将视频高度设置为50%视口高度 */
@@ -253,20 +325,5 @@ form button:active {
     }
     .member {
         width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
-    }
-}
-
-@media (max-width: 480px) {
-    .video-container {
-        height: 40vh; /* 在小屏幕设备上将视频高度设置为40%视口高度 */
-    }
-    .content {
-        margin-top: 0; /* 确保内容紧接在视频下方开始 */
-    }
-    nav ul li a {
-        font-size: 0.8rem; /* 调整字体大小 */
-    }
-    .member {
-        width: calc(50% - 1rem); /* 在小屏幕设备上每行显示2个成员 */
     }
 }
