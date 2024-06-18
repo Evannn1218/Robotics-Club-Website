@@ -98,6 +98,15 @@ nav ul li a:hover {
     flex: 1;
 }
 
+.content h1, .content h2, .content p, .content ul {
+    margin-bottom: 2rem; /* 扩大各部分之间的间隔 */
+}
+
+.no-bullets {
+    list-style: none; /* 去掉有序号标点 */
+    padding: 0;
+}
+
 footer {
     background-color: #333;
     color: #fff;
