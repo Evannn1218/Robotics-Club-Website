@@ -1,4 +1,5 @@
-/* 通用样式 */
+/* 其他样式保持不变 */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,7 +12,6 @@ body {
     min-height: 100vh;
 }
 
-/* 页眉样式 */
 header {
     position: absolute; /* 绝对定位 */
     top: 0;
@@ -26,13 +26,13 @@ header {
     background: transparent; /* 去掉黑框 */
 }
 
-header .logo img {
+.logo img {
     max-height: 50px; /* 保持 logo 的高度 */
     width: auto;
     transition: transform 0.3s ease;
 }
 
-header .logo:hover img {
+.logo:hover img {
     transform: scale(1.1);
 }
 
@@ -69,7 +69,6 @@ nav ul li a:hover {
     color: #f0c14b;
 }
 
-/* 视频容器样式 */
 .video-container {
     position: relative;
     width: 100%;
@@ -90,7 +89,6 @@ nav ul li a:hover {
     pointer-events: none; /* 禁用视频播放框 */
 }
 
-/* 内容样式 */
 .content {
     padding: 2rem;
     text-align: center;
@@ -102,17 +100,20 @@ nav ul li a:hover {
     flex: 1;
 }
 
+.login-content {
+    padding-top: 0;
+    margin-top: -5vh; /* 将内容向上移动 */
+}
+
 .content h1, .content h2, .content p, .content ul {
     margin-bottom: 2rem; /* 扩大各部分之间的间隔 */
 }
 
-/* 去掉有序号标点 */
 .no-bullets {
-    list-style: none;
+    list-style: none; /* 去掉有序号标点 */
     padding: 0;
 }
 
-/* 事件模块样式 */
 .event-module {
     display: flex;
     align-items: center;
@@ -141,19 +142,17 @@ nav ul li a:hover {
     margin: 0.5rem 0 0 0;
 }
 
-/* 页脚样式 */
 footer {
     background-color: #333;
     color: #fff;
     padding: 1rem;
     text-align: center;
-    position: relative;
     width: 100%;
     box-sizing: border-box;
     flex-shrink: 0;
+    position: relative; /* 添加 position 属性 */
 }
 
-/* 管理员登录样式 */
 .admin-login {
     position: absolute;
     bottom: 1rem;
@@ -167,7 +166,6 @@ footer {
     text-decoration: underline;
 }
 
-/* 表单样式 */
 form {
     display: flex;
     flex-direction: column;
@@ -204,13 +202,72 @@ form button:active {
     transform: scale(1);
 }
 
+.members-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.member {
+    width: calc(20% - 1rem); /* 每行显示5个成员 */
+    text-align: center;
+    background-color: #fff; /* 设置模块背景为白色 */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.member img {
+    width: 100%;
+    height: 200px; /* 设置固定高度，确保所有图片大小一致 */
+    object-fit: cover; /* 确保图片填充整个容器 */
+}
+
+.member h3 {
+    margin: 0.5rem 0 0 0;
+}
+
+.member p {
+    margin: 0.25rem 0 0 0;
+}
+
+.team-button {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    width: 90%;
+    height: 100px;
+    margin: 2rem auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.team-button img {
+    height: 80px;
+    width: auto;
+    margin: 0 1rem;
+}
+
+.team-button .team-text {
+    color: #fff;
+    font-size: 1.2rem;
+    flex: 1;
+    text-align: center;
+}
+
+.team-button:hover {
+    transform: scale(1.1);
+}
+
 /* 登录页面样式 */
 .login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding-top: 0;
+    margin-top: -5vh; /* 将内容向上移动 */
 }
 
 .login-container h2 {
@@ -252,67 +309,7 @@ form button:active {
     transform: scale(1);
 }
 
-/* 成员墙样式 */
-.members-wall {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.member {
-    width: calc(20% - 1rem); /* 每行显示5个成员 */
-    text-align: center;
-    background-color: #fff; /* 设置模块背景为白色 */
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-.member img {
-    width: 100%;
-    height: 200px; /* 设置固定高度，确保所有图片大小一致 */
-    object-fit: cover; /* 确保图片填充整个容器 */
-}
-
-.member h3 {
-    margin: 0.5rem 0 0 0;
-}
-
-.member p {
-    margin: 0.25rem 0 0 0;
-}
-
-/* 团队按钮样式 */
-.team-button {
-    display: flex;
-    align-items: center;
-    background-color: #000;
-    width: 90%;
-    height: 100px;
-    margin: 2rem auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    text-decoration: none;
-}
-
-.team-button img {
-    height: 80px;
-    width: auto;
-    margin: 0 1rem;
-}
-
-.team-button .team-text {
-    color: #fff;
-    font-size: 1.2rem;
-    flex: 1;
-    text-align: center;
-}
-
-.team-button:hover {
-    transform: scale(1.1);
-}
-
-/* 响应式设计 */
+/* 媒体查询 */
 @media (max-width: 768px) {
     .video-container {
         height: 50vh; /* 在移动设备上将视频高度设置为50%视口高度 */
@@ -325,5 +322,11 @@ form button:active {
     }
     .member {
         width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
+    }
+}
+
+@media (max-width: 480px) {
+    .member {
+        width: 100%; /* 在小屏设备上每行显示1个成员 */
     }
 }
