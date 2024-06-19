@@ -1,77 +1,366 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYU Shanghai Robotics Club</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header>
-        <a href="https://shanghai.nyu.edu/cn" class="logo">
-            <img src="images/NYUSH logo.png" alt="Robotics Club Logo">
-        </a>
-        <nav>
-            <img src="images/listbutton.png" alt="Menu" class="menu-button">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="members.html">Members</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="video-container">
-        <video autoplay muted loop playsinline webkit-playsinline>
-            <source src="videos/BG.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="content">
-        <h1>Welcome to the NYU Shanghai Robotics Club</h1>
-        <p>We are dedicated to promoting interest in robotics through education, competitions, and hands-on projects.</p>
+/* 其他样式保持不变 */
 
-        <h2>Who We Are</h2>
-        <p>Founded in 2024, the NYU Shanghai Robotics Club provides a platform for students to explore the world of robotics. Our mission is to foster creativity and technical skills through rich educational resources and practical projects.</p>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden; /* 防止水平滚动条 */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        <h2>Upcoming Events</h2>
-        <div class="event-module">
-            <img src="images/SJTU_emblem.svg.png" alt="Shanghai Jiao Tong University VEX Elite Invitational Competition">
-            <div class="event-text">
-                <h3>Shanghai Jiao Tong University VEX Elite Invitational Competition</h3>
-                <p>(Shanghai, China Dec-2024)</p>
-            </div>
-        </div>
-        <div class="event-module">
-            <img src="images/VEX_signature_sign.jpg" alt="2024-2025 VURC Asia Open Signature Event">
-            <div class="event-text">
-                <h3>2024-2025 VURC Asia Open Signature Event</h3>
-                <p>(Wuxi, Jiangsu, China 29-Dec-2024 - 1-Jan-2025)</p>
-            </div>
-        </div>
-        <div class="event-module">
-            <img src="images/VEX_competition_sign.jpg" alt="The 17th VEX Asia-Pacific Robotics Championship 2025 – VURC Signature Event">
-            <div class="event-text">
-                <h3>The 17th VEX Asia-Pacific Robotics Championship 2025 – VURC Signature Event</h3>
-                <p>(Hainan, China 17-Jan-2025 - 20-Jan-2025)</p>
-            </div>
-        </div>
+header {
+    position: absolute; /* 绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 使 logo 和导航菜单在 header 内两端对齐 */
+    z-index: 10; /* 确保 header 在视频上层 */
+    padding: 0.5rem 1rem;
+    box-sizing: border-box; /* 确保内边距不会增加额外的空间 */
+    background: transparent; /* 去掉黑框 */
+}
 
-        <h2>Join Us</h2>
-        <p>Interested in joining the NYU Shanghai Robotics Club? Learn more about how to join and get involved in our exciting projects and competitions.</p>
+.logo img {
+    max-height: 50px; /* 保持 logo 的高度 */
+    width: auto;
+    transition: transform 0.3s ease;
+}
 
-        <h2>Contact Us</h2>
-        <p>If you have any questions or would like to learn more, please contact us through our social media channels.</p>
-    </div>
-    <footer>
-        <p>&copy; 2024 NYU Shanghai Robotics Club</p>
-        <a href="login.html" class="admin-login">Admin Login</a>
-    </footer>
-    <script>
-        document.querySelector('.menu-button').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('show');
-        });
-    </script>
-</body>
-</html>
+.logo:hover img {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    position: relative; /* 确保子元素的绝对定位基于nav */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem; /* 导航链接之间的间距 */
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+nav ul li a {
+    color: #fff; /* 白色字体 */
+    text-decoration: none;
+    font-size: 1rem; /* 初始字体大小 */
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f0c14b;
+}
+
+.menu-button {
+    display: none;
+    height: 50px; /* 与 logo 高度一致 */
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: -15px; /* 向左移动一点 */
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* 保持视频高度为60vh */
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* 确保视频居中 */
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%; /* 确保视频填满容器 */
+    object-fit: cover; /* 确保视频不被裁剪并填满容器 */
+    pointer-events: none; /* 禁用视频播放框 */
+}
+
+.content {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    margin-top: 0; /* 确保内容紧接在视频下方开始 */
+    flex: 1;
+}
+
+.login-content {
+    padding-top: 0;
+    margin-top: -5vh; /* 将内容向上移动 */
+}
+
+.content h1, .content h2, .content p, .content ul {
+    margin-bottom: 2rem; /* 扩大各部分之间的间隔 */
+}
+
+.no-bullets {
+    list-style: none; /* 去掉有序号标点 */
+    padding: 0;
+}
+
+.event-module {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent; /* 边框不可视 */
+}
+
+.event-module img {
+    height: 100px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+.event-module .event-text {
+    text-align: left;
+}
+
+.event-module h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.event-module p {
+    margin: 0.5rem 0 0 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative; /* 添加 position 属性 */
+}
+
+.admin-login {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.8rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-login:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin: 0.5rem 0;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 0.5rem 2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+form button:hover {
+    transform: scale(1.1);
+    background-color: #555;
+}
+
+form button:active {
+    transform: scale(1);
+}
+
+.members-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.member {
+    width: calc(20% - 1rem); /* 每行显示5个成员 */
+    text-align: center;
+    background-color: #fff; /* 设置模块背景为白色 */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.member img {
+    width: 100%;
+    height: 200px; /* 设置固定高度，确保所有图片大小一致 */
+    object-fit: cover; /* 确保图片填充整个容器 */
+}
+
+.member h3 {
+    margin: 0.5rem 0 0 0;
+}
+
+.member p {
+    margin: 0.25rem 0 0 0;
+}
+
+.team-button {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    width: 90%;
+    height: 100px;
+    margin: 2rem auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.team-button img {
+    height: 80px;
+    width: auto;
+    margin: 0 1rem;
+}
+
+.team-button .team-text {
+    color: #fff;
+    font-size: 1.2rem;
+    flex: 1;
+    text-align: center;
+}
+
+.team-button:hover {
+    transform: scale(1.1);
+}
+
+/* 登录页面样式 */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    margin-top: -5vh; /* 将内容向上移动 */
+}
+
+.login-container h2 {
+    margin-bottom: 2rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.login-container form label {
+    margin-bottom: 0.5rem;
+}
+
+.login-container form input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container form button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.login-container form button:hover {
+    transform: scale(1.05);
+    background-color: #555;
+}
+
+.login-container form button:active {
+    transform: scale(1);
+}
+
+/* 媒体查询 */
+@media (max-width: 768px) {
+    .video-container {
+        height: 40vh; /* 在移动设备上将视频高度设置为40%视口高度 */
+    }
+    .content {
+        margin-top: 0; /* 确保内容紧接在视频下方开始 */
+    }
+    nav ul {
+        flex-direction: column; /* 垂直排列 */
+        position: absolute; /* 绝对定位 */
+        top: 100%; /* 下移到nav元素底部 */
+        left: -15px; /* 确保菜单与按钮对齐 */
+        background: none; /* 去掉背景 */
+        width: auto;
+        text-align: center; /* 居中文本 */
+        transition: max-height 0.3s ease;
+        max-height: 0; /* 初始高度为0 */
+        overflow: hidden; /* 隐藏超出部分 */
+    }
+    nav ul.show {
+        max-height: 200px; /* 展开菜单的最大高度 */
+    }
+    nav ul li a {
+        font-size: 1rem; /* 调整字体大小 */
+    }
+    nav ul li {
+        margin: 0.5rem 0; /* 减小按钮之间的间隔 */
+    }
+    .member {
+        width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .member {
+        width: 100%; /* 在小屏设备上每行显示1个成员 */
+    }
+}
