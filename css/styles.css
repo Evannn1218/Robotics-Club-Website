@@ -325,15 +325,15 @@ form button:active {
 
 /* 扩展导航样式 */
 nav.expanded ul {
-    gap: 0.2rem; /* 扩展时更小的间距 */
+    gap: 0.15rem; /* 扩展时更小的间距 */
 }
 
 nav.expanded ul li {
-    padding: 1rem; /* 确保在扩展时保持相同的间距 */
+    padding: 0.15rem; /* 确保在扩展时保持相同的间距 */
 }
 
 nav.expanded ul li a {
-    font-size: 2rem; /* 扩展时更大的字体大小 */
+    font-size: 0.72rem; /* 扩展时更大的字体大小 */
 }
 
 /* 媒体查询 */
