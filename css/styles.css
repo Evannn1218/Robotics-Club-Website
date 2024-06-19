@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    position: absolute; /* 绝对定位 */
+    position: fixed; /* 固定定位 */
     top: 0;
     left: 0;
     width: 100%;
@@ -97,7 +97,7 @@ nav ul li a:hover {
 
 .video-container video {
     width: 100%;
-    height: calc(100% + 20px); /* 确保视频向上移动，裁剪下方 */
+    height: 100%; /* 确保视频填满容器 */
     object-fit: cover; /* 确保视频不被裁剪并填满容器 */
     pointer-events: none; /* 禁用视频播放框 */
 }
@@ -109,7 +109,7 @@ nav ul li a:hover {
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    margin-top: 0; /* 确保内容紧接在视频下方开始 */
+    margin-top: 60vh; /* 确保内容紧接在视频下方开始 */
     flex: 1;
 }
 
@@ -325,10 +325,10 @@ form button:active {
 /* 媒体查询 */
 @media (max-width: 768px) {
     .video-container {
-        height: 40vh; /* 在移动设备上将视频高度设置为50%视口高度 */
+        height: 40vh; /* 在移动设备上将视频高度设置为40%视口高度 */
     }
     .content {
-        margin-top: 0; /* 确保内容紧接在视频下方开始 */
+        margin-top: 40vh; /* 确保内容紧接在视频下方开始 */
     }
     nav ul {
         flex-direction: column; /* 垂直排列 */
@@ -340,13 +340,16 @@ form button:active {
         text-align: center; /* 居中文本 */
         transition: max-height 0.3s ease;
         max-height: 0; /* 初始高度为0 */
-        overflow: hidden; /* 隐藏超出部分 */
+        overflow: hidden; /* 隐藏溢出部分 */
     }
     nav ul.show {
         max-height: 200px; /* 展开菜单的最大高度 */
     }
     nav ul li a {
         font-size: 1rem; /* 调整字体大小 */
+    }
+    nav ul li {
+        margin: 0.5rem 0; /* 减小按钮之间的间隔 */
     }
     .member {
         width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
