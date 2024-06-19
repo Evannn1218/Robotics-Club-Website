@@ -329,7 +329,7 @@ form button:active {
         height: 40vh; /* 在移动设备上将视频高度设置为40%视口高度 */
     }
     .content {
-        margin-top: 40vh; /* 确保内容紧接在视频下方开始 */
+        margin-top: 0; /* 确保内容紧接在视频下方开始 */
     }
     nav ul {
         flex-direction: column; /* 垂直排列 */
@@ -350,7 +350,7 @@ form button:active {
         font-size: 1rem; /* 调整字体大小 */
     }
     nav ul li {
-        margin: 0.5rem 0; /* 减小按钮之间的间隔 */
+        margin: 0.3rem 0; /* 减小按钮之间的间隔 */
     }
     .member {
         width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
