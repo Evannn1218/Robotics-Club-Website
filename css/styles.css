@@ -90,7 +90,7 @@ nav ul:not(.hidden) {
     width: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
-    margin-left: -10px; /* 向左移动一点 */
+    margin-left: -15px; /* 向左移动一点 */
 }
 
 .menu-button:hover {
@@ -358,4 +358,3 @@ form button:active {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
     }
 }
-
