@@ -335,7 +335,7 @@ form button:active {
         flex-direction: column; /* 垂直排列 */
         position: absolute; /* 绝对定位 */
         top: 50px; /* 下移到nav元素底部 */
-        left: -15px; /* 确保菜单与按钮对齐 */
+        left: 0; /* 确保菜单与按钮对齐 */
         background: transparent; /* 去掉背景 */
         width: auto;
         text-align: center; /* 居中文本 */
