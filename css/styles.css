@@ -23,7 +23,7 @@ header {
     z-index: 10; /* 确保 header 在视频上层 */
     padding: 0.5rem 1rem;
     box-sizing: border-box; /* 确保内边距不会增加额外的空间 */
-    background: transparent; /* 去掉黑框 */
+    background: rgba(0, 0, 0, 0.5); /* 半透明背景，增强可读性 */
 }
 
 .logo img {
@@ -63,6 +63,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 1rem; /* 初始字体大小 */
     transition: color 0.3s ease, font-size 0.3s ease;
+    text-align: center; /* 居中文本 */
 }
 
 nav ul li a:hover {
@@ -109,7 +110,7 @@ nav ul li a:hover {
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    margin-top: 60vh; /* 确保内容紧接在视频下方开始 */
+    margin-top: -4rem; /* 确保内容紧接在视频下方开始 */
     flex: 1;
 }
 
@@ -339,7 +340,7 @@ form button:active {
         width: auto;
         text-align: center; /* 居中文本 */
         transition: max-height 0.3s ease;
-        max-height: 0; /* 初始高度为0 */
+        max-height: 0; /* 初始状态下隐藏 */
         overflow: hidden; /* 隐藏溢出部分 */
     }
     nav ul.show {
