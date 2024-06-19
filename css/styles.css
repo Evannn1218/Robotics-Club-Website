@@ -47,47 +47,30 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 0.5rem; /* 导航链接之间的间距 */
-    flex-direction: column; /* 垂直排列 */
-    position: absolute; /* 绝对定位 */
-    top: 100%; /* 下移到nav元素底部 */
-    left: -15px; /* 确保菜单与按钮对齐 */
-    background: none; /* 去掉背景 */
-    width: auto;
-    text-align: center; /* 居中文本 */
-    transition: max-height 0.3s ease;
-    max-height: 0; /* 初始高度为0 */
-    overflow: hidden; /* 隐藏内容 */
+    gap: 2rem; /* 导航链接之间的间距 */
+    flex-wrap: wrap;
+    justify-content: flex-end;
     box-sizing: border-box;
 }
 
 nav ul li {
     margin: 0;
-    padding: 0.25rem 0;
+    padding: 0.5rem 0;
 }
 
 nav ul li a {
     color: #fff; /* 白色字体 */
     text-decoration: none;
-    font-size: 0.8rem; /* 调整字体大小 */
+    font-size: 1rem; /* 初始字体大小 */
     transition: color 0.3s ease, font-size 0.3s ease;
-    display: inline-block; /* 使链接内的文字可以换行 */
-    word-wrap: break-word; /* 在空格处换行 */
 }
 
 nav ul li a:hover {
     color: #f0c14b;
 }
 
-nav ul.hidden {
-    max-height: 0; /* 隐藏状态 */
-}
-
-nav ul:not(.hidden) {
-    max-height: 300px; /* 显示状态，最大高度可调整 */
-}
-
 .menu-button {
+    display: none;
     height: 50px; /* 与 logo 高度一致 */
     width: auto;
     cursor: pointer;
@@ -347,11 +330,29 @@ form button:active {
     .content {
         margin-top: 0; /* 确保内容紧接在视频下方开始 */
     }
+    nav ul {
+        flex-direction: column; /* 垂直排列 */
+        position: absolute; /* 绝对定位 */
+        top: 100%; /* 下移到nav元素底部 */
+        left: -15px; /* 确保菜单与按钮对齐 */
+        background: none; /* 去掉背景 */
+        width: auto;
+        text-align: center; /* 居中文本 */
+        transition: max-height 0.3s ease;
+        max-height: 0; /* 初始高度为0 */
+        overflow: hidden; /* 隐藏超出部分 */
+    }
+    nav ul.show {
+        max-height: 200px; /* 展开菜单的最大高度 */
+    }
     nav ul li a {
-        font-size: 0.8rem; /* 调整字体大小 */
+        font-size: 1rem; /* 调整字体大小 */
     }
     .member {
         width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
+    }
+    .menu-button {
+        display: block;
     }
 }
 
