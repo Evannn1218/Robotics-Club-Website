@@ -47,7 +47,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 1rem; /* 导航链接之间的间距 */
+    gap: 0.5rem; /* 导航链接之间的间距 */
     flex-direction: column; /* 垂直排列 */
     position: absolute; /* 绝对定位 */
     top: 100%; /* 下移到nav元素底部 */
@@ -63,13 +63,13 @@ nav ul {
 
 nav ul li {
     margin: 0;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
 }
 
 nav ul li a {
     color: #fff; /* 白色字体 */
     text-decoration: none;
-    font-size: 1rem; /* 初始字体大小 */
+    font-size: 0.8rem; /* 调整字体大小 */
     transition: color 0.3s ease, font-size 0.3s ease;
 }
 
@@ -345,7 +345,7 @@ form button:active {
         margin-top: 0; /* 确保内容紧接在视频下方开始 */
     }
     nav ul li a {
-        font-size: 0.9rem; /* 调整字体大小 */
+        font-size: 0.8rem; /* 调整字体大小 */
     }
     .member {
         width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
