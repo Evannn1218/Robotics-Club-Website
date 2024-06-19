@@ -47,7 +47,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 2rem; /* 导航链接之间的间距 */
+    gap: 1rem; /* 导航链接之间的间距 */
     flex-direction: column; /* 垂直排列 */
     position: absolute; /* 绝对定位 */
     top: 100%; /* 下移到nav元素底部 */
