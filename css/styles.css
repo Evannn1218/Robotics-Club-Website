@@ -152,7 +152,7 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-.event-module p {
+event-module p {
     margin: 0.5rem 0 0 0;
 }
 
@@ -333,7 +333,7 @@ nav.expanded ul li {
 }
 
 nav.expanded ul li a {
-    font-size: 2rem; /* 扩展时更大的字体大小 */
+    font-size: 0.72rem; /* 扩展时更大的字体大小 */
 }
 
 /* 媒体查询 */
@@ -379,7 +379,7 @@ nav.expanded ul li a {
         padding: 0.1rem 0; /* 进一步减小上下间距 */
     }
     nav ul li a {
-        font-size: 0.8rem; /* 更小的字体 */
+        font-size: 0.6rem; /* 更小的字体 */
     }
     .member {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
