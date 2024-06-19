@@ -47,27 +47,20 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 0.5rem; /* 调整间距 */
-    flex-direction: column; /* 垂直排列 */
-    position: absolute; /* 绝对定位 */
-    top: 100%; /* 下移到nav元素底部 */
-    left: 50%; /* 从左侧移动50% */
-    transform: translateX(-50%); /* 向左移动50%自身宽度 */
+    gap: 0.5rem; /* 导航链接之间的间距 */
+    flex-direction: row; /* 水平排列 */
+    position: relative;
     background: none; /* 去掉背景 */
     text-align: center;
-    transition: max-height 0.3s ease, opacity 0.3s ease; /* 添加过渡效果 */
-    max-height: 0; /* 初始高度为0 */
-    overflow: hidden; /* 隐藏内容 */
     box-sizing: border-box;
-    opacity: 0; /* 初始透明度为0 */
 }
 
 nav ul li {
     margin: 0;
-    padding: 0.3rem 0; /* 减小上下间距 */
+    padding: 1rem; /* 默认间距 */
 }
 
-nav ul li a {
+header nav ul li a {
     color: #fff; /* 白色字体 */
     text-decoration: none;
     font-size: 1rem; /* 初始字体大小 */
@@ -78,17 +71,8 @@ nav ul li a:hover {
     color: #f0c14b;
 }
 
-nav ul.hidden {
-    max-height: 0; /* 隐藏状态 */
-    opacity: 0;
-}
-
-nav ul:not(.hidden) {
-    max-height: 300px; /* 显示状态，最大高度可调整 */
-    opacity: 1;
-}
-
 .menu-button {
+    display: none; /* 默认隐藏 */
     height: 50px; /* 与 logo 高度一致 */
     width: auto;
     cursor: pointer;
@@ -102,7 +86,7 @@ nav ul:not(.hidden) {
 .video-container {
     position: relative;
     width: 100%;
-    height: 40vh; /* 保持视频高度为40vh */
+    height: 62vh; /* 保持视频高度为62vh */
     overflow: hidden;
     margin: 0;
     box-sizing: border-box;
@@ -339,6 +323,19 @@ form button:active {
     transform: scale(1);
 }
 
+/* 扩展导航样式 */
+nav.expanded ul {
+    gap: 0.2rem; /* 扩展时更小的间距 */
+}
+
+nav.expanded ul li {
+    padding: 1rem; /* 确保在扩展时保持相同的间距 */
+}
+
+nav.expanded ul li a {
+    font-size: 2rem; /* 扩展时更大的字体大小 */
+}
+
 /* 媒体查询 */
 @media (max-width: 768px) {
     .video-container {
@@ -347,15 +344,43 @@ form button:active {
     .content {
         margin-top: 0; /* 确保内容紧接在视频下方开始 */
     }
-    nav ul li a {
-        font-size: 0.9rem; /* 调整字体大小 */
+    nav ul {
+        flex-direction: column; /* 垂直排列 */
+        position: absolute;
+        top: 100%;
+        left: 50%; /* 从左侧移动50% */
+        transform: translateX(-50%); /* 向左移动50%自身宽度，确保居中 */
+        background: none; /* 去掉背景 */
+        text-align: center;
+        width: 100%;
+        transition: max-height 0.3s ease;
+        max-height: 0; /* 初始高度为0 */
+        overflow: hidden; /* 隐藏内容 */
     }
-    .member {
-        width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
+    nav ul li {
+        padding: 0.2rem 0; /* 减小上下间距 */
+    }
+    nav ul li a {
+        font-size: 0.7rem; /* 调整字体大小 */
+    }
+    .menu-button {
+        display: block; /* 在移动设备上显示 */
+    }
+    nav ul.hidden {
+        max-height: 0; /* 隐藏状态 */
+    }
+    nav ul:not(.hidden) {
+        max-height: 300px; /* 显示状态，最大高度可调整 */
     }
 }
 
 @media (max-width: 480px) {
+    nav ul li {
+        padding: 0.1rem 0; /* 进一步减小上下间距 */
+    }
+    nav ul li a {
+        font-size: 0.6rem; /* 更小的字体 */
+    }
     .member {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
     }
