@@ -335,12 +335,12 @@ form button:active {
         flex-direction: column; /* 垂直排列 */
         position: absolute; /* 绝对定位 */
         top: 50px; /* 下移到nav元素底部 */
-        left: 0; /* 确保菜单与按钮对齐 */
+        left: -15px; /* 确保菜单与按钮对齐 */
         background: transparent; /* 去掉背景 */
         width: auto;
         text-align: center; /* 居中文本 */
         max-height: 0;
-        overflow: hidden; /* 初始状态下隐藏菜单 */
+        overflow: hidden;
         transition: max-height 0.3s ease;
     }
     nav ul.show {
@@ -348,6 +348,7 @@ form button:active {
     }
     nav ul li a {
         font-size: 1rem; /* 调整字体大小 */
+        padding: 0.5rem; /* 增加垂直间距 */
     }
     nav ul li {
         margin: 0.25rem 0; /* 减小按钮之间的间隔 */
@@ -365,6 +366,6 @@ form button:active {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
     }
     nav ul {
-        left: -15px; /* 确保菜单与按钮对齐 */
+        left: 0; /* 确保菜单与按钮对齐 */
     }
 }
