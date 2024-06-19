@@ -336,12 +336,12 @@ form button:active {
         position: absolute; /* 绝对定位 */
         top: 50px; /* 下移到nav元素底部 */
         left: -15px; /* 确保菜单与按钮对齐 */
-        background: none; /* 去掉背景 */
+        background: transparent; /* 去掉背景 */
         width: auto;
         text-align: center; /* 居中文本 */
+        max-height: 0;
+        overflow: hidden; /* 初始状态下隐藏菜单 */
         transition: max-height 0.3s ease;
-        max-height: 0; /* 初始状态下隐藏菜单 */
-        overflow: hidden; /* 隐藏超出部分 */
     }
     nav ul.show {
         max-height: 200px; /* 展开菜单的最大高度 */
@@ -350,7 +350,7 @@ form button:active {
         font-size: 1rem; /* 调整字体大小 */
     }
     nav ul li {
-        margin: 0.3rem 0; /* 减小按钮之间的间隔 */
+        margin: 0.25rem 0; /* 减小按钮之间的间隔 */
     }
     .member {
         width: calc(33.33% - 1rem); /* 在移动设备上每行显示3个成员 */
