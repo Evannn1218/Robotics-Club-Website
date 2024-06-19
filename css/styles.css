@@ -361,7 +361,7 @@ nav.expanded ul li a {
         padding: 0.2rem 0; /* 减小上下间距 */
     }
     nav ul li a {
-        font-size: 0.7rem; /* 调整字体大小 */
+        font-size: 1rem; /* 调整字体大小 */
     }
     .menu-button {
         display: block; /* 在移动设备上显示 */
