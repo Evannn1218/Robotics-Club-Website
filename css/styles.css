@@ -333,7 +333,7 @@ nav.expanded ul li {
 }
 
 nav.expanded ul li a {
-    font-size: 0.72rem; /* 扩展时更大的字体大小 */
+    font-size: 1rem; /* 扩展时更大的字体大小 */
 }
 
 /* 媒体查询 */
