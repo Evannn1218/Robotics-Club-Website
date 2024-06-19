@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    position: absolute; /* 绝对定位 */
+    position: fixed; /* 固定定位 */
     top: 0;
     left: 0;
     width: 100%;
@@ -24,6 +24,13 @@ header {
     padding: 0.5rem 1rem;
     box-sizing: border-box; /* 确保内边距不会增加额外的空间 */
     background: transparent; /* 去掉黑框 */
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
 }
 
 .logo img {
