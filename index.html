@@ -12,13 +12,14 @@
             <img src="images/NYUSH logo.png" alt="Robotics Club Logo">
         </a>
         <nav>
-            <ul>
+            <ul id="nav-links" class="hidden">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="members.html">Members</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
+            <img src="images/listbutton.png" alt="Menu" class="menu-button" onclick="toggleMenu()">
         </nav>
     </header>
     <div class="video-container">
@@ -67,5 +68,15 @@
         <p>&copy; 2024 NYU Shanghai Robotics Club</p>
         <a href="login.html" class="admin-login">Admin Login</a>
     </footer>
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById('nav-links');
+            if (navLinks.classList.contains('hidden')) {
+                navLinks.classList.remove('hidden');
+            } else {
+                navLinks.classList.add('hidden');
+            }
+        }
+    </script>
 </body>
 </html>

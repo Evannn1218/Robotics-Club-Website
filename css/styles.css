@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    position: fixed; /* 固定定位 */
+    position: absolute; /* 绝对定位 */
     top: 0;
     left: 0;
     width: 100%;
@@ -24,13 +24,6 @@ header {
     padding: 0.5rem 1rem;
     box-sizing: border-box; /* 确保内边距不会增加额外的空间 */
     background: transparent; /* 去掉黑框 */
-}
-
-.logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
 }
 
 .logo img {
@@ -44,9 +37,9 @@ header {
 }
 
 nav {
-    flex-grow: 1; /* 使导航栏占据剩余空间 */
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    position: relative; /* 确保子元素的绝对定位基于nav */
 }
 
 nav ul {
@@ -55,8 +48,16 @@ nav ul {
     margin: 0;
     display: flex;
     gap: 2rem; /* 导航链接之间的间距 */
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    flex-direction: column; /* 垂直排列 */
+    position: absolute; /* 绝对定位 */
+    top: 100%; /* 下移到nav元素底部 */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+    width: 100%;
+    text-align: center;
+    transition: max-height 0.3s ease;
+    max-height: 0; /* 初始高度为0 */
+    overflow: hidden; /* 隐藏内容 */
     box-sizing: border-box;
 }
 
@@ -74,6 +75,25 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #f0c14b;
+}
+
+nav ul.hidden {
+    max-height: 0; /* 隐藏状态 */
+}
+
+nav ul:not(.hidden) {
+    max-height: 300px; /* 显示状态，最大高度可调整 */
+}
+
+.menu-button {
+    height: 50px; /* 与 logo 高度一致 */
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
 }
 
 .video-container {
