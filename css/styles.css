@@ -54,7 +54,7 @@ nav ul {
     left: -15px; /* 确保菜单与按钮对齐 */
     background: none; /* 去掉背景 */
     width: auto;
-    text-align: left;
+    text-align: center; /* 居中文本 */
     transition: max-height 0.3s ease;
     max-height: 0; /* 初始高度为0 */
     overflow: hidden; /* 隐藏内容 */
@@ -71,6 +71,8 @@ nav ul li a {
     text-decoration: none;
     font-size: 0.8rem; /* 调整字体大小 */
     transition: color 0.3s ease, font-size 0.3s ease;
+    display: inline-block; /* 使链接内的文字可以换行 */
+    word-wrap: break-word; /* 在空格处换行 */
 }
 
 nav ul li a:hover {
