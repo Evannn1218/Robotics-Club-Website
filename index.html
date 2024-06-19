@@ -13,7 +13,7 @@
         </a>
         <nav>
             <img src="images/listbutton.png" alt="Menu" class="menu-button">
-            <ul>
+            <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="members.html">Members</a></li>
@@ -70,7 +70,8 @@
     </footer>
     <script>
         document.querySelector('.menu-button').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('show');
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('show');
         });
     </script>
 </body>
