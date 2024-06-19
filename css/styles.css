@@ -52,7 +52,7 @@ nav ul {
     position: absolute; /* 绝对定位 */
     top: 100%; /* 下移到nav元素底部 */
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+    background: none; /* 去掉背景 */
     width: 100%;
     text-align: center;
     transition: max-height 0.3s ease;
