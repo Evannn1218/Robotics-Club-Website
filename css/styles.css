@@ -152,7 +152,7 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-.event-module p {
+event-module p {
     margin: 0.5rem 0 0 0;
 }
 
@@ -326,21 +326,22 @@ form button:active {
 /* 媒体查询 */
 @media (max-width: 768px) {
     .video-container {
-        height: 40vh; /* 在移动设备上将视频高度设置为40%视口高度 */
+        height: 50vh; /* 在移动设备上将视频高度设置为50%视口高度 */
     }
     .content {
         margin-top: 0; /* 确保内容紧接在视频下方开始 */
     }
     nav ul {
-        flex-direction: column; /* 垂直排列 */
-        position: absolute; /* 绝对定位 */
-        top: 50px; /* 下移到nav元素底部 */
-        left: -15px; /* 确保菜单与按钮对齐 */
-        background: transparent; /* 去掉背景 */
+        display: none; /* 默认隐藏菜单 */
+        position: absolute;
+        top: 60px; /* 确保菜单与按钮对齐 */
+        left: 50%; /* 确保菜单与按钮对齐 */
+        transform: translateX(-50%);
+        flex-direction: column; /* 垂直排列菜单项 */
+        background: transparent; /* 去掉背景色 */
         width: auto;
-        text-align: center; /* 居中文本 */
-        max-height: 0;
-        overflow: hidden;
+        max-height: 0; /* 初始隐藏菜单 */
+        overflow: hidden; /* 隐藏超出的部分 */
         transition: max-height 0.3s ease;
     }
     nav ul.show {
@@ -366,6 +367,6 @@ form button:active {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
     }
     nav ul {
-        left: 0; /* 确保菜单与按钮对齐 */
+        left: 50%; /* 确保菜单与按钮中心对齐 */
     }
 }
