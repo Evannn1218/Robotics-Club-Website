@@ -333,7 +333,7 @@ nav.expanded ul li {
 }
 
 nav.expanded ul li a {
-    font-size: 0.9rem; /* 扩展时更大的字体大小 */
+    font-size: 0.8rem; /* 扩展时更大的字体大小 */
 }
 
 /* 媒体查询 */
@@ -379,7 +379,7 @@ nav.expanded ul li a {
         padding: 0.1rem 0; /* 进一步减小上下间距 */
     }
     nav ul li a {
-        font-size: 0.9rem; /* 更小的字体 */
+        font-size: 0.8rem; /* 更小的字体 */
     }
     .member {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
