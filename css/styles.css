@@ -398,6 +398,11 @@ nav.expanded ul li a {
     nav ul li a {
         font-size: 0.8rem !important; /* 更小的字体 */
     }
+    .menu-button {
+        display: block; /* 在移动设备上显示 */
+        position: relative; /* 确保可以移动 */
+        left: -10px; /* 向左移动 10px，可以根据需要调整 */
+    }
     .member {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
     }
