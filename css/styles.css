@@ -77,6 +77,8 @@ nav ul li a:hover {
     width: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
+    position: relative; /* 确保可以移动 */
+    left: -10px; /* 向左移动 10px，可以根据需要调整 */
 }
 
 .menu-button:hover {
@@ -333,7 +335,7 @@ nav.expanded ul li {
 }
 
 nav.expanded ul li a {
-    font-size: 0.8rem; /* 扩展时更大的字体大小 */
+    font-size: 0.8rem !important; /* 扩展时更大的字体大小 */
 }
 
 /* 媒体查询 */
@@ -348,8 +350,8 @@ nav.expanded ul li a {
         flex-direction: column; /* 垂直排列 */
         position: absolute;
         top: 100%;
-        left: 50%; /* 从左侧移动50% */
-        transform: translateX(-50%); /* 向左移动50%自身宽度，确保居中 */
+        left: 40%; /* 从左侧移动 40%，可以根据需要调整 */
+        transform: translateX(-40%); /* 向左移动 40% 自身宽度，确保居中 */
         background: none; /* 去掉背景 */
         text-align: center;
         width: 100%;
@@ -361,10 +363,12 @@ nav.expanded ul li a {
         padding: 0.2rem 0; /* 减小上下间距 */
     }
     nav ul li a {
-        font-size: 0.9rem; /* 调整字体大小 */
+        font-size: 0.8rem !important; /* 调整字体大小 */
     }
     .menu-button {
         display: block; /* 在移动设备上显示 */
+        position: relative; /* 确保可以移动 */
+        left: -10px; /* 向左移动 10px，可以根据需要调整 */
     }
     nav ul.hidden {
         max-height: 0; /* 隐藏状态 */
@@ -375,11 +379,24 @@ nav.expanded ul li a {
 }
 
 @media (max-width: 480px) {
+    nav ul {
+        flex-direction: column; /* 垂直排列 */
+        position: absolute;
+        top: 100%;
+        left: 40%; /* 从左侧移动 40%，可以根据需要调整 */
+        transform: translateX(-40%); /* 向左移动 40% 自身宽度，确保居中 */
+        background: none; /* 去掉背景 */
+        text-align: center;
+        width: 100%;
+        transition: max-height 0.3s ease;
+        max-height: 0; /* 初始高度为0 */
+        overflow: hidden; /* 隐藏内容 */
+    }
     nav ul li {
         padding: 0.1rem 0; /* 进一步减小上下间距 */
     }
     nav ul li a {
-        font-size: 0.8rem; /* 更小的字体 */
+        font-size: 0.8rem !important; /* 更小的字体 */
     }
     .member {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
