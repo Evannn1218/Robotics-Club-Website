@@ -78,7 +78,7 @@ nav ul li a:hover {
     cursor: pointer;
     transition: transform 0.3s ease;
     position: relative; /* 确保可以移动 */
-    left: -10px; /* 向左移动 10px，可以根据需要调整 */
+    left: 0; /* 移除左移 */
 }
 
 .menu-button:hover {
@@ -154,7 +154,7 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-event-module p {
+.event-module p {
     margin: 0.5rem 0 0 0;
 }
 
@@ -349,9 +349,9 @@ nav.expanded ul li a {
     nav ul {
         flex-direction: column; /* 垂直排列 */
         position: absolute;
-        top: 100%;
-        left: 40%; /* 从左侧移动 40%，可以根据需要调整 */
-        transform: translateX(-40%); /* 向左移动 40% 自身宽度，确保居中 */
+        top: 100%; /* 菜单在按钮正下方 */
+        left: 0; /* 与按钮左对齐 */
+        transform: translateX(0); /* 去除左移 */
         background: none; /* 去掉背景 */
         text-align: center;
         width: 100%;
@@ -359,16 +359,10 @@ nav.expanded ul li a {
         max-height: 0; /* 初始高度为0 */
         overflow: hidden; /* 隐藏内容 */
     }
-    nav ul li {
-        padding: 0.2rem 0; /* 减小上下间距 */
-    }
-    nav ul li a {
-        font-size: 0.8rem !important; /* 调整字体大小 */
-    }
     .menu-button {
         display: block; /* 在移动设备上显示 */
         position: relative; /* 确保可以移动 */
-        left: -10px; /* 向左移动 10px，可以根据需要调整 */
+        left: 0; /* 与菜单左对齐 */
     }
     nav ul.hidden {
         max-height: 0; /* 隐藏状态 */
@@ -382,9 +376,9 @@ nav.expanded ul li a {
     nav ul {
         flex-direction: column; /* 垂直排列 */
         position: absolute;
-        top: 100%;
-        left: 40%; /* 从左侧移动 40%，可以根据需要调整 */
-        transform: translateX(-40%); /* 向左移动 40% 自身宽度，确保居中 */
+        top: 100%; /* 菜单在按钮正下方 */
+        left: 0; /* 与按钮左对齐 */
+        transform: translateX(0); /* 去除左移 */
         background: none; /* 去掉背景 */
         text-align: center;
         width: 100%;
@@ -401,7 +395,13 @@ nav.expanded ul li a {
     .menu-button {
         display: block; /* 在移动设备上显示 */
         position: relative; /* 确保可以移动 */
-        left: -10px; /* 向左移动 10px，可以根据需要调整 */
+        left: 0; /* 与菜单左对齐 */
+    }
+    nav ul.hidden {
+        max-height: 0; /* 隐藏状态 */
+    }
+    nav ul:not(.hidden) {
+        max-height: 300px; /* 显示状态，最大高度可调整 */
     }
     .member {
         width: 100%; /* 在小屏设备上每行显示1个成员 */
