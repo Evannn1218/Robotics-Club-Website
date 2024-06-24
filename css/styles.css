@@ -388,7 +388,7 @@ nav.expanded ul li a {
         padding: 0.1rem 0; /* 进一步减小上下间距 */
     }
     nav ul li a {
-        font-size: 0.8rem !important; /* 更小的字体 */
+        font-size: 1.5rem !important; /* 更小的字体 */
     }
     .menu-button {
         display: block; /* 在移动设备上显示 */
