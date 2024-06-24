@@ -15,10 +15,6 @@
             <img src="images/listbutton.png" alt="Menu" class="menu-button">
             <ul class="hidden">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="members.html">Members</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -44,6 +40,35 @@
         <p>&copy; 2024 NYU Shanghai Robotics Club</p>
     </footer>
     <script>
+        // Function to check and update menu styles based on window size
+        function updateMenuStyles() {
+            const nav = document.querySelector('nav');
+            const navUl = document.querySelector('nav ul');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('hidden');
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '1rem'; // 大屏时字体大小
+                });
+                nav.classList.remove('expanded'); // 确保大屏时菜单不处于展开状态
+            } else {
+                if (!nav.classList.contains('expanded')) {
+                    navUl.classList.add('hidden');
+                }
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '0.8rem'; // 小屏时字体大小
+                });
+            }
+        }
+
+        // Update menu styles on window resize
+        window.addEventListener('resize', updateMenuStyles);
+
+        // Initial call to set the correct styles
+        updateMenuStyles();
+
+        // Toggle menu on button click
         document.querySelector('.menu-button').addEventListener('click', function() {
             document.querySelector('nav').classList.toggle('expanded');
             document.querySelector('nav ul').classList.toggle('hidden');
