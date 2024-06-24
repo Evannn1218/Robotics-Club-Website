@@ -12,7 +12,8 @@
             <img src="images/NYUSH logo.png" alt="Robotics Club Logo">
         </a>
         <nav>
-            <ul>
+            <img src="images/listbutton.png" alt="Menu" class="menu-button">
+            <ul class="hidden">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="members.html">Members</a></li>
@@ -23,16 +24,43 @@
     </header>
     <div class="video-container">
         <video autoplay muted loop playsinline webkit-playsinline>
-            <source src="https://github.com/Evannn1218/nyushRoboticsClub/releases/download/v1.0/Events1.mp4" type="video/mp4">
+            <source src="videos/Events.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
     <div class="content">
-        <h1>Events</h1>
-        <p>Details about our events and competitions.</p>
+        <h1>Upcoming Events</h1>
+        <div class="event-module">
+            <img src="images/SJTU_emblem.svg.png" alt="Shanghai Jiao Tong University VEX Elite Invitational Competition">
+            <div class="event-text">
+                <h3>Shanghai Jiao Tong University VEX Elite Invitational Competition</h3>
+                <p>(Shanghai, China Dec-2024)</p>
+            </div>
+        </div>
+        <div class="event-module">
+            <img src="images/VEX_signature_sign.jpg" alt="2024-2025 VURC Asia Open Signature Event">
+            <div class="event-text">
+                <h3>2024-2025 VURC Asia Open Signature Event</h3>
+                <p>(Wuxi, Jiangsu, China 29-Dec-2024 - 1-Jan-2025)</p>
+            </div>
+        </div>
+        <div class="event-module">
+            <img src="images/VEX_competition_sign.jpg" alt="The 17th VEX Asia-Pacific Robotics Championship 2025 – VURC Signature Event">
+            <div class="event-text">
+                <h3>The 17th VEX Asia-Pacific Robotics Championship 2025 – VURC Signature Event</h3>
+                <p>(Hainan, China 17-Jan-2025 - 20-Jan-2025)</p>
+            </div>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 NYU Shanghai Robotics Club</p>
+        <a href="login.html" class="admin-login">Admin Login</a>
     </footer>
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('expanded');
+            document.querySelector('nav ul').classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

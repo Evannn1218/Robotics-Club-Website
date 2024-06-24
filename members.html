@@ -12,7 +12,8 @@
             <img src="images/NYUSH logo.png" alt="Robotics Club Logo">
         </a>
         <nav>
-            <ul>
+            <img src="images/listbutton.png" alt="Menu" class="menu-button">
+            <ul class="hidden">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="members.html">Members</a></li>
@@ -65,11 +66,22 @@
                 <h3>William Zheng</h3>
                 <p>Member</p>
             </div>
+            <div class="member">
+                <img src="images/Leo.jpg" alt="Leo Lei">
+                <h3>Leo Lei</h3>
+                <p>Member</p>
+            </div>
         </div>
     </div>
     <footer>
         <p>&copy; 2024 NYU Shanghai Robotics Club</p>
         <a href="login.html" class="admin-login">Admin Login</a>
     </footer>
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('expanded');
+            document.querySelector('nav ul').classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

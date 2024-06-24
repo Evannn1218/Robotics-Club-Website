@@ -154,7 +154,7 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-.event-module p {
+event-module p {
     margin: 0.5rem 0 0 0;
 }
 
@@ -349,20 +349,24 @@ nav.expanded ul li a {
     nav ul {
         flex-direction: column; /* 垂直排列 */
         position: absolute;
-        top: 100%; /* 菜单在按钮正下方 */
-        left: 0; /* 与按钮左对齐 */
-        transform: translateX(0); /* 去除左移 */
-        background: none; /* 去掉背景 */
+        top: 100%;
+        left: 0;
+        transform: translateX(0);
+        background: none;
         text-align: center;
         width: 100%;
         transition: max-height 0.3s ease;
         max-height: 0; /* 初始高度为0 */
         overflow: hidden; /* 隐藏内容 */
     }
+    nav ul li {
+        padding: 0.2rem 0;
+    }
+    nav ul li a {
+        font-size: 0.8rem !important;
+    }
     .menu-button {
-        display: block; /* 在移动设备上显示 */
-        position: relative; /* 确保可以移动 */
-        left: 0; /* 与菜单左对齐 */
+        display: block;
     }
     nav ul.hidden {
         max-height: 0; /* 隐藏状态 */
@@ -373,19 +377,6 @@ nav.expanded ul li a {
 }
 
 @media (max-width: 480px) {
-    nav ul {
-        flex-direction: column; /* 垂直排列 */
-        position: absolute;
-        top: 100%; /* 菜单在按钮正下方 */
-        left: 0; /* 与按钮左对齐 */
-        transform: translateX(0); /* 去除左移 */
-        background: none; /* 去掉背景 */
-        text-align: center;
-        width: 100%;
-        transition: max-height 0.3s ease;
-        max-height: 0; /* 初始高度为0 */
-        overflow: hidden; /* 隐藏内容 */
-    }
     nav ul li {
         padding: 0.1rem 0; /* 进一步减小上下间距 */
     }
@@ -393,9 +384,7 @@ nav.expanded ul li a {
         font-size: 0.8rem !important; /* 更小的字体 */
     }
     .menu-button {
-        display: block; /* 在移动设备上显示 */
-        position: relative; /* 确保可以移动 */
-        left: 0; /* 与菜单左对齐 */
+        display: block;
     }
     nav ul.hidden {
         max-height: 0; /* 隐藏状态 */
