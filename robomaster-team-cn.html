@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>机甲大师团队 - 上海纽约大学机器人俱乐部</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="https://shanghai.nyu.edu/cn" class="logo">
+            <img src="images/NYUSH logo.png" alt="Robotics Club Logo">
+        </a>
+        <nav>
+            <img src="images/listbutton.png" alt="Menu" class="menu-button">
+            <ul class="hidden">
+                <li><a href="index-cn.html">主页</a></li>
+                <li><a href="about-cn.html">关于我们</a></li>
+                <li><a href="members-cn.html">成员</a></li>
+                <li><a href="events-cn.html">活动</a></li>
+                <li><a href="contact-cn.html">联系我们</a></li>
+                <li><a href="index-en.html">English</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="video-container">
+        <video autoplay muted loop playsinline webkit-playsinline>
+            <source src="videos/BG.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="content">
+        <h1>机甲大师团队</h1>
+        <p>建设中</p>
+    </div>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/company/robotics-club-at-nyu-shanghai" target="_blank">
+                <img src="images/Linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/nyush_robotics_club/" target="_blank">
+                <img src="images/Instagram.jpg" alt="Instagram" class="social-icon">
+            </a>
+        </div>
+        <p>&copy; 2024 上海纽约大学机器人俱乐部</p>
+        <a href="login-cn.html" class="admin-login">管理员登录</a>
+    </footer>
+    <script>
+        // Function to check and update menu styles based on window size
+        function updateMenuStyles() {
+            const nav = document.querySelector('nav');
+            const navUl = document.querySelector('nav ul');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('hidden');
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '1rem'; // 大屏时字体大小
+                });
+                nav.classList.remove('expanded'); // 确保大屏时菜单不处于展开状态
+            } else {
+                if (!nav.classList.contains('expanded')) {
+                    navUl.classList.add('hidden');
+                }
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '0.8rem'; // 小屏时字体大小
+                });
+            }
+        }
+
+        // Update menu styles on window resize
+        window.addEventListener('resize', updateMenuStyles);
+
+        // Initial call to set the correct styles
+        updateMenuStyles();
+
+        // Toggle menu on button click
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('expanded');
+            document.querySelector('nav ul').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

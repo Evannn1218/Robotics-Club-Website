@@ -1,4 +1,4 @@
-/* 其他样式保持不变 */
+/* 保持其他样式不变 */
 
 body {
     font-family: Arial, sans-serif;
@@ -155,7 +155,7 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-event-module p {
+.event-module p {
     margin: 0.5rem 0 0 0;
 }
 
@@ -170,20 +170,23 @@ footer {
     position: relative; /* 添加 position 属性 */
 }
 
-.social-media {
+footer .social-media {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem; /* 增加图标和文字之间的距离 */
+    margin-bottom: 1rem; /* 确保和文字之间有空隙 */
 }
 
-.social-media a img {
-    height: 40px;
+footer .social-media a {
+    margin: 0 0.5rem;
+}
+
+footer .social-media img {
+    height: 30px; /* 调整社交媒体图标的大小 */
     width: auto;
 }
 
-.footer-text {
-    text-align: center;
+footer p {
+    margin: 0;
 }
 
 .admin-login {
@@ -243,7 +246,7 @@ form button:active {
 }
 
 .member {
-    width: calc(20% - 1rem); /* 每行显示5个成员 */
+    width: calc(50% - 1rem); /* 每行显示2个成员 */
     text-align: center;
     background-color: #fff; /* 设置模块背景为白色 */
     padding: 1rem;
@@ -447,6 +450,6 @@ nav.expanded ul li a {
         max-height: 400px; /* 显示状态，最大高度可调整 */
     }
     .member {
-        width: 100%; /* 在小屏设备上每行显示1个成员 */
+        width: calc(50% - 1rem); /* 在小屏设备上每行显示2个成员 */
     }
 }

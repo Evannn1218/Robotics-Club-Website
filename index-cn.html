@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海纽约大学机器人俱乐部</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="https://shanghai.nyu.edu/cn" class="logo">
+            <img src="images/NYUSH logo.png" alt="机器人俱乐部Logo">
+        </a>
+        <nav>
+            <img src="images/listbutton.png" alt="菜单" class="menu-button">
+            <ul class="hidden">
+                <li><a href="index-cn.html">首页</a></li>
+                <li><a href="about-cn.html">关于我们</a></li>
+                <li><a href="members-cn.html">成员</a></li>
+                <li><a href="events-cn.html">活动</a></li>
+                <li><a href="contact-cn.html">联系我们</a></li>
+                <li><a href="index-en.html">English</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="video-container">
+        <video autoplay muted loop playsinline webkit-playsinline>
+            <source src="videos/BG.mp4" type="video/mp4">
+            您的浏览器不支持视频标签。
+        </video>
+    </div>
+    <div class="content">
+        <h1>欢迎来到上海纽约大学机器人俱乐部</h1>
+        <p>我们致力于通过教育、竞赛和动手项目来激发对机器人技术的兴趣。</p>
+
+        <h2>我们是谁</h2>
+        <p>上海纽约大学机器人俱乐部成立于2024年，为学生提供了一个探索机器人世界的平台。我们的使命是通过丰富的教育资源和实践项目来培养创造力和技术技能。</p>
+
+        <h2>即将举行的活动</h2>
+        <div class="event-module">
+            <img src="images/SJTU_emblem.svg.png" alt="上海交通大学VEX精英邀请赛">
+            <div class="event-text">
+                <h3>上海交通大学VEX精英邀请赛</h3>
+                <p>（中国上海，2024年12月）</p>
+            </div>
+        </div>
+        <div class="event-module">
+            <img src="images/VEX_signature_sign.jpg" alt="2024-2025 VURC亚洲公开赛">
+            <div class="event-text">
+                <h3>2024-2025 VURC亚洲公开赛</h3>
+                <p>（中国江苏无锡，2024年12月29日-2025年1月1日）</p>
+            </div>
+        </div>
+        <div class="event-module">
+            <img src="images/VEX_competition_sign.jpg" alt="第17届VEX亚太机器人锦标赛 – VURC签名赛">
+            <div class="event-text">
+                <h3>第17届VEX亚太机器人锦标赛 – VURC签名赛</h3>
+                <p>（中国海南，2025年1月17日-1月20日）</p>
+            </div>
+        </div>
+
+        <h2>加入我们</h2>
+        <p>对加入上海纽约大学机器人俱乐部感兴趣？了解更多关于如何加入并参与我们令人兴奋的项目和竞赛。</p>
+
+        <h2>联系我们</h2>
+        <p>如果您有任何问题或想了解更多信息，请通过我们的社交媒体渠道联系我们。</p>
+    </div>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/company/robotics-club-at-nyu-shanghai">
+                <img src="images/Linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/nyush_robotics_club/">
+                <img src="images/Instagram.jpg" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; 2024 上海纽约大学机器人俱乐部</p>
+        <a href="login-cn.html" class="admin-login">管理员登录</a>
+    </footer>
+    <script>
+        // Function to check and update menu styles based on window size
+        function updateMenuStyles() {
+            const nav = document.querySelector('nav');
+            const navUl = document.querySelector('nav ul');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('hidden');
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '1rem'; // 大屏时字体大小
+                });
+                nav.classList.remove('expanded'); // 确保大屏时菜单不处于展开状态
+            } else {
+                if (!nav.classList.contains('expanded')) {
+                    navUl.classList.add('hidden');
+                }
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '0.8rem'; // 小屏时字体大小
+                });
+            }
+        }
+
+        // Update menu styles on window resize
+        window.addEventListener('resize', updateMenuStyles);
+
+        // Initial call to set the correct styles
+        updateMenuStyles();
+
+        // Toggle menu on button click
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('expanded');
+            document.querySelector('nav ul').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
