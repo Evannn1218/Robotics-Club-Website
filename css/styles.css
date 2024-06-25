@@ -150,7 +150,7 @@ nav ul li a:hover {
     text-align: left;
 }
 
-event-module h3 {
+.event-module h3 {
     margin: 0;
     font-size: 1.2rem;
 }
@@ -168,6 +168,22 @@ footer {
     box-sizing: border-box;
     flex-shrink: 0;
     position: relative; /* 添加 position 属性 */
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem; /* 增加图标和文字之间的距离 */
+}
+
+.social-media a img {
+    height: 40px;
+    width: auto;
+}
+
+.footer-text {
+    text-align: center;
 }
 
 .admin-login {
