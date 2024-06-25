@@ -1,4 +1,4 @@
-/* 保持其他样式不变 */
+/* 其他样式保持不变 */
 
 body {
     font-family: Arial, sans-serif;
@@ -27,7 +27,7 @@ header {
 }
 
 .logo img {
-    max-height: 50px; /* 保持 logo 的高度 */
+    max-height: 62px; /* 保持 logo 的高度 */
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -60,12 +60,17 @@ nav ul li {
     padding: 1rem; /* 默认间距 */
 }
 
-header nav ul li a {
+header nav ul li a,
+.language-switch {
     color: #fff; /* 白色字体 */
     text-decoration: none;
     font-size: 1rem; /* 初始字体大小 */
     transition: color 0.3s ease, font-size 0.3s ease;
     text-align: center; /* 居中对齐文本 */
+    line-height: 1.5; /* 确保垂直对齐 */
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    height: 100%;
 }
 
 nav ul li a:hover {
@@ -150,12 +155,12 @@ nav ul li a:hover {
     text-align: left;
 }
 
-.event-module h3 {
+event-module h3 {
     margin: 0;
     font-size: 1.2rem;
 }
 
-.event-module p {
+event-module p {
     margin: 0.5rem 0 0 0;
 }
 
@@ -172,21 +177,20 @@ footer {
 
 footer .social-media {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1rem; /* 确保和文字之间有空隙 */
+    justify-content: center; /* 水平居中 */
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-footer .social-media a {
-    margin: 0 0.5rem;
+footer .social-media a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
 }
 
-footer .social-media img {
-    height: 30px; /* 调整社交媒体图标的大小 */
-    width: auto;
-}
-
-footer p {
-    margin: 0;
+footer .social-media a:hover img {
+    transform: scale(1.1);
 }
 
 .admin-login {
@@ -246,7 +250,7 @@ form button:active {
 }
 
 .member {
-    width: calc(50% - 1rem); /* 每行显示2个成员 */
+    width: calc(20% - 1rem); /* 每行显示5个成员 */
     text-align: center;
     background-color: #fff; /* 设置模块背景为白色 */
     padding: 1rem;
@@ -388,12 +392,14 @@ nav.expanded ul li a {
         text-align: center; /* 居中对齐文本 */
         white-space: normal; /* 允许文本换行 */
     }
-    nav ul li a {
+    nav ul li a,
+    nav ul .language-switch {
         font-size: 1.5rem !important; /* 增大字体 */
         overflow: visible; /* 显示所有内容 */
         display: block; /* 确保链接块级元素 */
         padding-left: 1rem; /* 增加内边距确保足够空间 */
         padding-right: 1rem; /* 增加内边距确保足够空间 */
+        line-height: normal; /* 确保垂直对齐 */
     }
     .menu-button {
         display: block; /* 在移动设备上显示 */
@@ -405,6 +411,9 @@ nav.expanded ul li a {
     }
     nav ul:not(.hidden) {
         max-height: 400px; /* 显示状态，最大高度可调整 */
+    }
+    .member {
+        width: 50%; /* 在小屏设备上每行显示2个成员 */
     }
 }
 
@@ -431,12 +440,14 @@ nav.expanded ul li a {
         text-align: center; /* 居中对齐文本 */
         white-space: normal; /* 允许文本换行 */
     }
-    nav ul li a {
+    nav ul li a,
+    nav ul .language-switch {
         font-size: 1.5rem !important; /* 墛大字体 */
         overflow: visible; /* 显示所有内容 */
         display: block; /* 确保链接块级元素 */
-        padding-left: 1rem; /* 增加内边距确保足够空间 */
-        padding-right: 1rem; /* 增加内边距确保足够空间 */
+        padding-left: 1rem; /* 墛加内边距确保足够空间 */
+        padding-right: 1rem; /* 墛加内边距确保足够空间 */
+        line-height: normal; /* 确保垂直对齐 */
     }
     .menu-button {
         display: block; /* 在移动设备上显示 */
@@ -450,6 +461,6 @@ nav.expanded ul li a {
         max-height: 400px; /* 显示状态，最大高度可调整 */
     }
     .member {
-        width: calc(50% - 1rem); /* 在小屏设备上每行显示2个成员 */
+        width: 50%; /* 在小屏设备上每行显示2个成员 */
     }
 }
