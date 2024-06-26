@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Events</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="index-en.html" class="logo">
+            <img src="images/NYUSH logo.png" alt="NYU Shanghai Robotics Club Logo">
+        </a>
+        <nav>
+            <img src="images/listbutton.png" alt="Menu" class="menu-button">
+            <ul class="hidden">
+                <li><a href="index-en.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="video-container">
+        <video autoplay muted loop playsinline webkit-playsinline>
+            <source src="videos/BG.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="content">
+        <h1>Manage Events</h1>
+        <div class="event-management">
+            <form id="add-event-form">
+                <h2>Add Event</h2>
+                <label for="event-title">Title:</label>
+                <input type="text" id="event-title" name="title" required>
+                <label for="event-image">Image:</label>
+                <input type="file" id="event-image" name="image" accept="image/*" required>
+                <label for="event-description">Description:</label>
+                <textarea id="event-description" name="description" required></textarea>
+                <button type="submit">Add Event</button>
+            </form>
+            <h2>Existing Events</h2>
+            <div id="existing-events">
+                <!-- Existing events will be listed here -->
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 NYU Shanghai Robotics Club</p>
+    </footer>
+    <script>
+        // Dummy data for existing events
+        const events = [
+            {
+                title: 'Sample Event 1',
+                image: 'images/sample1.jpg',
+                description: 'Description for sample event 1.'
+            },
+            {
+                title: 'Sample Event 2',
+                image: 'images/sample2.jpg',
+                description: 'Description for sample event 2.'
+            }
+        ];
+
+        function renderEvents() {
+            const eventContainer = document.getElementById('existing-events');
+            eventContainer.innerHTML = '';
+            events.forEach((event, index) => {
+                const eventElement = document.createElement('div');
+                eventElement.classList.add('event-module');
+                eventElement.innerHTML = `
+                    <img src="${event.image}" alt="${event.title}">
+                    <div class="event-text">
+                        <h3>${event.title}</h3>
+                        <p>${event.description}</p>
+                        <button onclick="deleteEvent(${index})">Delete</button>
+                    </div>
+                `;
+                eventContainer.appendChild(eventElement);
+            });
+        }
+
+        function deleteEvent(index) {
+            events.splice(index, 1);
+            renderEvents();
+        }
+
+        document.getElementById('add-event-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const title = document.getElementById('event-title').value;
+            const imageInput = document.getElementById('event-image');
+            const description = document.getElementById('event-description').value;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const image = e.target.result;
+                events.push({ title, image, description });
+                renderEvents();
+            };
+            reader.readAsDataURL(imageInput.files[0]);
+
+            this.reset();
+        });
+
+        renderEvents();
+
+        // Function to check and update menu styles based on window size
+        function updateMenuStyles() {
+            const nav = document.querySelector('nav');
+            const navUl = document.querySelector('nav ul');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('hidden');
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '1rem'; // Font size for larger screens
+                });
+                nav.classList.remove('expanded'); // Ensure menu is not expanded on larger screens
+            } else {
+                if (!nav.classList.contains('expanded')) {
+                    navUl.classList.add('hidden');
+                }
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '0.8rem'; // Font size for smaller screens
+                });
+            }
+        }
+
+        // Update menu styles on window resize
+        window.addEventListener('resize', updateMenuStyles);
+
+        // Initial call to set the correct styles
+        updateMenuStyles();
+
+        // Toggle menu on button click
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('expanded');
+            document.querySelector('nav ul').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

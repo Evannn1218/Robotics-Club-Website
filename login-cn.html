@@ -8,18 +8,13 @@
 </head>
 <body>
     <header>
-        <a href="https://shanghai.nyu.edu/cn" class="logo">
-            <img src="images/NYUSH logo.png" alt="机器人俱乐部Logo">
+        <a href="index-cn.html" class="logo">
+            <img src="images/NYUSH logo.png" alt="上海纽约大学机器人俱乐部标志">
         </a>
         <nav>
             <img src="images/listbutton.png" alt="菜单" class="menu-button">
             <ul class="hidden">
                 <li><a href="index-cn.html">首页</a></li>
-                <li><a href="about-cn.html">关于我们</a></li>
-                <li><a href="members-cn.html">成员</a></li>
-                <li><a href="events-cn.html">活动</a></li>
-                <li><a href="contact-cn.html">联系我们</a></li>
-                <li><a href="index-en.html">English</a></li>
             </ul>
         </nav>
     </header>
@@ -32,29 +27,32 @@
     <div class="content">
         <div class="login-container">
             <h2>管理员登录</h2>
-            <form action="login-handler.php" method="POST">
-                <label for="username">用户名：</label>
+            <form id="login-form">
+                <label for="username">用户名:</label>
                 <input type="text" id="username" name="username" required>
-                <label for="password">密码：</label>
+                <label for="password">密码:</label>
                 <input type="password" id="password" name="password" required>
                 <button type="submit">登录</button>
             </form>
         </div>
     </div>
     <footer>
-        <div class="social-media">
-            <a href="https://www.linkedin.com/company/robotics-club-at-nyu-shanghai">
-                <img src="images/Linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.instagram.com/nyush_robotics_club/">
-                <img src="images/Instagram.jpg" alt="Instagram">
-            </a>
-        </div>
         <p>&copy; 2024 上海纽约大学机器人俱乐部</p>
-        <a href="login-cn.html" class="admin-login">管理员登录</a>
     </footer>
     <script>
-        // Function to check and update menu styles based on window size
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表单的默认提交行为
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'nyush_robotics_club' && password === 'nyushroboticsclub') {
+                window.location.href = 'admin-cn.html'; // 跳转到 admin-cn.html
+            } else {
+                alert('用户名或密码错误');
+            }
+        });
+
+        // 检查并根据窗口大小更新菜单样式的函数
         function updateMenuStyles() {
             const nav = document.querySelector('nav');
             const navUl = document.querySelector('nav ul');
@@ -76,13 +74,13 @@
             }
         }
 
-        // Update menu styles on window resize
+        // 窗口大小变化时更新菜单样式
         window.addEventListener('resize', updateMenuStyles);
 
-        // Initial call to set the correct styles
+        // 初始化调用设置正确的样式
         updateMenuStyles();
 
-        // Toggle menu on button click
+        // 单击按钮时切换菜单
         document.querySelector('.menu-button').addEventListener('click', function() {
             document.querySelector('nav').classList.toggle('expanded');
             document.querySelector('nav ul').classList.toggle('hidden');
@@ -90,3 +88,4 @@
     </script>
 </body>
 </html>
+

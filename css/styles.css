@@ -349,6 +349,104 @@ form button:active {
     transform: scale(1);
 }
 
+/* 管理页面样式 */
+.manage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.manage-container h2 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.manage-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+}
+
+.manage-container form label {
+    margin-bottom: 0.5rem;
+    text-align: left;
+    color: #333;
+}
+
+.manage-container form input,
+.manage-container form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.manage-container form button {
+    padding: 0.5rem 2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.manage-container form button:hover {
+    transform: scale(1.1);
+    background-color: #555;
+}
+
+.manage-container form button:active {
+    transform: scale(1);
+}
+
+.manage-container .event-list {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+.manage-container .event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.manage-container .event-item img {
+    height: 50px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+.manage-container .event-item .event-text {
+    flex: 1;
+    text-align: left;
+}
+
+.manage-container .event-item button {
+    padding: 0.5rem;
+    background-color: #ff3333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.manage-container .event-item button:hover {
+    transform: scale(1.1);
+    background-color: #cc0000;
+}
+
+.manage-container .event-item button:active {
+    transform: scale(1);
+}
+
 /* 扩展导航样式 */
 nav.expanded ul {
     gap: 0.15rem; /* 扩展时更小的间距 */
