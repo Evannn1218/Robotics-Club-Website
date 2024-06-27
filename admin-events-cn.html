@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理活动</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="index-cn.html" class="logo">
+            <img src="images/NYUSH logo.png" alt="上海纽约大学机器人俱乐部标志">
+        </a>
+        <nav>
+            <img src="images/listbutton.png" alt="菜单" class="menu-button">
+            <ul class="hidden">
+                <li><a href="index-cn.html">首页</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="video-container">
+        <video autoplay muted loop playsinline webkit-playsinline>
+            <source src="videos/BG.mp4" type="video/mp4">
+            您的浏览器不支持视频标签。
+        </video>
+    </div>
+    <div class="content">
+        <h1>管理活动</h1>
+        <div class="event-management">
+            <form id="add-event-form">
+                <h2>添加活动</h2>
+                <label for="event-title">标题:</label>
+                <input type="text" id="event-title" name="title" required>
+                <label for="event-image">图片:</label>
+                <input type="file" id="event-image" name="image" accept="image/*" required>
+                <label for="event-description">描述:</label>
+                <textarea id="event-description" name="description" required></textarea>
+                <button type="submit">添加活动</button>
+            </form>
+            <h2>现有活动</h2>
+            <div id="existing-events">
+                <!-- 现有活动将显示在这里 -->
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 上海纽约大学机器人俱乐部</p>
+    </footer>
+    <script>
+        // 假数据用于现有活动
+        const events = [
+            {
+                title: '示例活动 1',
+                image: 'images/sample1.jpg',
+                description: '示例活动 1 的描述。'
+            },
+            {
+                title: '示例活动 2',
+                image: 'images/sample2.jpg',
+                description: '示例活动 2 的描述。'
+            }
+        ];
+
+        function renderEvents() {
+            const eventContainer = document.getElementById('existing-events');
+            eventContainer.innerHTML = '';
+            events.forEach((event, index) => {
+                const eventElement = document.createElement('div');
+                eventElement.classList.add('event-module');
+                eventElement.innerHTML = `
+                    <img src="${event.image}" alt="${event.title}">
+                    <div class="event-text">
+                        <h3>${event.title}</h3>
+                        <p>${event.description}</p>
+                        <button onclick="deleteEvent(${index})">删除</button>
+                    </div>
+                `;
+                eventContainer.appendChild(eventElement);
+            });
+        }
+
+        function deleteEvent(index) {
+            events.splice(index, 1);
+            renderEvents();
+        }
+
+        document.getElementById('add-event-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const title = document.getElementById('event-title').value;
+            const imageInput = document.getElementById('event-image');
+            const description = document.getElementById('event-description').value;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const image = e.target.result;
+                events.push({ title, image, description });
+                renderEvents();
+            };
+            reader.readAsDataURL(imageInput.files[0]);
+
+            this.reset();
+        });
+
+        renderEvents();
+
+        // Function to check and update menu styles based on window size
+        function updateMenuStyles() {
+            const nav = document.querySelector('nav');
+            const navUl = document.querySelector('nav ul');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (window.innerWidth > 768) {
+                navUl.classList.remove('hidden');
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '1rem'; // Font size for larger screens
+                });
+                nav.classList.remove('expanded'); // Ensure menu is not expanded on larger screens
+            } else {
+                if (!nav.classList.contains('expanded')) {
+                    navUl.classList.add('hidden');
+                }
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.style.fontSize = '0.8rem'; // Font size for smaller screens
+                });
+            }
+        }
+
+        // Update menu styles on window resize
+        window.addEventListener('resize', updateMenuStyles);
+
+        // Initial call to set the correct styles
+        updateMenuStyles();
+
+        // Toggle menu on button click
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('expanded');
+            document.querySelector('nav ul').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

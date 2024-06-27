@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理成员</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="index-cn.html" class="logo">
+            <img src="images/NYUSH logo.png" alt="Robotics Club Logo">
+        </a>
+        <nav>
+            <img src="images/listbutton.png" alt="Menu" class="menu-button">
+            <ul class="hidden">
+                <li><a href="index-cn.html">首页</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="video-container">
+        <video autoplay muted loop playsinline webkit-playsinline>
+            <source src="videos/BG.mp4" type="video/mp4">
+            您的浏览器不支持视频标签。
+        </video>
+    </div>
+    <div class="content">
+        <h1>管理成员</h1>
+        <div class="manage-container">
+            <form id="members-form">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+                <label for="position">职位：</label>
+                <input type="text" id="position" name="position" required>
+                <label for="photo">照片：</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+                <button type="submit">添加成员</button>
+            </form>
+            <div class="event-list">
+                <div class="event-item">
+                    <img src="images/Evan.jpg" alt="Evan Xiao">
+                    <div class="event-text">
+                        <h3>Evan Xiao</h3>
+                        <p>President</p>
+                    </div>
+                    <div class="event-buttons">
+                        <button class="edit-button">编辑</button>
+                        <button class="delete-button">删除</button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="images/Leo.jpg" alt="Leo Lei">
+                    <div class="event-text">
+                        <h3>Leo Lei</h3>
+                        <p>Director of Events</p>
+                    </div>
+                    <div class="event-buttons">
+                        <button class="edit-button">编辑</button>
+                        <button class="delete-button">删除</button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="images/Maxon.jpg" alt="Maxon Yin">
+                    <div class="event-text">
+                        <h3>Maxon Yin</h3>
+                        <p>Director of Manufacturing</p>
+                    </div>
+                    <div class="event-buttons">
+                        <button class="edit-button">编辑</button>
+                        <button class="delete-button">删除</button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="images/Eric.jpg" alt="Eric Liang">
+                    <div class="event-text">
+                        <h3>Eric Liang</h3>
+                        <p>Director of Mechanical Group</p>
+                    </div>
+                    <div class="event-buttons">
+                        <button class="edit-button">编辑</button>
+                        <button class="delete-button">删除</button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="images/Noelia.jpg" alt="Noelia Yang">
+                    <div class="event-text">
+                        <h3>Noelia Yang</h3>
+                        <p>Director of Software Development</p>
+                    </div>
+                    <div class="event-buttons">
+                        <button class="edit-button">编辑</button>
+                        <button class="delete-button">删除</button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="images/Kyle.jpg" alt="Kyle Chen">
+                    <div class="event-text">
+                        <h3>Kyle Chen</h3>
+                        <p>Advisor</p>
+                    </div>
+                    <div class="event-buttons">
+                        <button class="edit-button">编辑</button>
+                        <button class="delete-button">删除</button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="images/Lewis.jpg" alt="Lewis Zhang">
+                    <div class="event-text">
+                        <h3>Lewis Zhang</h3>
+                        <p>Director of Programming Group</p>
+                    </div>
+                    <div class="event-buttons">
+                        <button class="edit-button">编辑</button>
+                        <button class="delete-button">删除</button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <img src="images/William.jpg" alt="William Zheng">
+                    <div class="event-text">
+                        <h3>William Zheng</h3>
+                        <p>Director of Operations and Finance</p>
+                    </div>
+                    <div class="event-buttons">
+                        <button class="edit-button">编辑</button>
+                        <button class="delete-button">删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 上海纽约大学机器人俱乐部</p>
+        <a href="login-cn.html" class="admin-login">管理员登录</a>
+    </footer>
+    <script>
+        // JavaScript 代码来处理表单提交和成员编辑/删除操作
+        document.getElementById('members-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // 处理添加新成员逻辑
+        });
+
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // 处理删除成员逻辑
+            });
+        });
+
+        document.querySelectorAll('.edit-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // 处理编辑成员逻辑
+            });
+        });
+    </script>
+</body>
+</html>

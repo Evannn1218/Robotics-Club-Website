@@ -429,6 +429,11 @@ form button:active {
     text-align: left;
 }
 
+.manage-container .event-item .event-buttons {
+    display: flex;
+    gap: 0.5rem; /* 增加编辑和删除按钮之间的间距 */
+}
+
 .manage-container .event-item button {
     padding: 0.5rem;
     background-color: #ff3333;
@@ -445,6 +450,14 @@ form button:active {
 
 .manage-container .event-item button:active {
     transform: scale(1);
+}
+
+.manage-container .edit-button {
+    background-color: #333;
+}
+
+.manage-container .edit-button:hover {
+    background-color: #555;
 }
 
 /* 扩展导航样式 */
@@ -496,7 +509,7 @@ nav.expanded ul li a {
         overflow: visible; /* 显示所有内容 */
         display: block; /* 确保链接块级元素 */
         padding-left: 1rem; /* 增加内边距确保足够空间 */
-        padding-right: 1rem; /* 增加内边距确保足够空间 */
+        padding-right: 1rem; /* 墛加内边距确保足够空间 */
         line-height: normal; /* 确保垂直对齐 */
     }
     .menu-button {
