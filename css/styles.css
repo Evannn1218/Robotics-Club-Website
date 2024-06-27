@@ -429,11 +429,6 @@ form button:active {
     text-align: left;
 }
 
-.manage-container .event-item .event-buttons {
-    display: flex;
-    gap: 0.5rem; /* 增加编辑和删除按钮之间的间距 */
-}
-
 .manage-container .event-item button {
     padding: 0.5rem;
     background-color: #ff3333;
@@ -452,12 +447,31 @@ form button:active {
     transform: scale(1);
 }
 
-.manage-container .edit-button {
+/* 成员编辑和删除按钮样式 */
+.manage-container .member-item button {
+    padding: 0.5rem;
+    margin: 0 0.25rem; /* 按钮之间的间隔 */
     background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.manage-container .edit-button:hover {
-    background-color: #555;
+.manage-container .member-item button.edit-button {
+    background-color: #4CAF50; /* 编辑按钮颜色 */
+}
+
+.manage-container .member-item button.edit-button:hover {
+    background-color: #45a049;
+}
+
+.manage-container .member-item button.delete-button {
+    background-color: #f44336; /* 删除按钮颜色 */
+}
+
+.manage-container .member-item button.delete-button:hover {
+    background-color: #da190b;
 }
 
 /* 扩展导航样式 */
@@ -505,7 +519,7 @@ nav.expanded ul li a {
     }
     nav ul li a,
     nav ul .language-switch {
-        font-size: 1.5rem !important; /* 增大字体 */
+        font-size: 1.5rem !important; /* 墛大字体 */
         overflow: visible; /* 显示所有内容 */
         display: block; /* 确保链接块级元素 */
         padding-left: 1rem; /* 增加内边距确保足够空间 */
