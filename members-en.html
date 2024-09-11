@@ -31,8 +31,8 @@
     </div>
     <div class="content">
         <h1>Faculty Mentor</h1>
-        <div class="mentor-section">
-            <div class="mentor">
+        <div class="members-wall">
+            <div class="member">
                 <img src="images/Chandra.jpg" alt="Chandrashekar Radhakrishnan ">
                 <h3>Chandrashekar Radhakrishnan</h3>
                 <p>Visiting Associate Professor of Practice in Computer Science, NYU Shanghai</p>
@@ -78,17 +78,22 @@
             <div class="member">
                 <img src="images/Leo.jpg" alt="Leo Lei">
                 <h3>Leo Lei</h3>
-                <p>Director of Marketing</p>
+                <p>Director of Events</p>
             </div>
             <div class="member">
                 <img src="images/William.jpg" alt="William Zheng">
                 <h3>William Zheng</h3>
-                <p>Director of Media</p>
+                <p>Director of Operations and Finance</p>
             </div>
             <div class="member">
-                <img src="images/Cynthia.jpg" alt="Cynthia Liu">
-                <h3>Cynthia Liu</h3>
-                <p>Art Designer</p>
+                <img src="images/Oliver.jpg" alt="Oliver HJ">
+                <h3>Oliver HJ</h3>
+                <p>Advisor</p>
+            </div>
+            <div class="member">
+                <img src="images/Jeffrey.jpg" alt="Jeffrey Isman">
+                <h3>Jeffrey Isman</h3>
+                <p>Advisor</p>
             </div>
         </div>
     </div>
@@ -108,6 +113,7 @@
         <a href="login-en.html" class="admin-login">Admin Login</a>
     </footer>
     <script>
+        // Function to check and update menu styles based on window size
         function updateMenuStyles() {
             const nav = document.querySelector('nav');
             const navUl = document.querySelector('nav ul');
@@ -116,22 +122,26 @@
             if (window.innerWidth > 768) {
                 navUl.classList.remove('hidden');
                 document.querySelectorAll('nav ul li a').forEach(link => {
-                    link.style.fontSize = '1rem';
+                    link.style.fontSize = '1rem'; // 大屏时字体大小
                 });
-                nav.classList.remove('expanded');
+                nav.classList.remove('expanded'); // 确保大屏时菜单不处于展开状态
             } else {
                 if (!nav.classList.contains('expanded')) {
                     navUl.classList.add('hidden');
                 }
                 document.querySelectorAll('nav ul li a').forEach(link => {
-                    link.style.fontSize = '0.8rem';
+                    link.style.fontSize = '0.8rem'; // 小屏时字体大小
                 });
             }
         }
 
+        // Update menu styles on window resize
         window.addEventListener('resize', updateMenuStyles);
+
+        // Initial call to set the correct styles
         updateMenuStyles();
 
+        // Toggle menu on button click
         document.querySelector('.menu-button').addEventListener('click', function() {
             document.querySelector('nav').classList.toggle('expanded');
             document.querySelector('nav ul').classList.toggle('hidden');
