@@ -545,6 +545,7 @@ nav.expanded ul li a {
         height: calc(100vw * 0.5);
         object-fit: cover;
     }
+    
 }
 
 @media (max-width: 480px) {
