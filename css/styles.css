@@ -594,3 +594,61 @@ nav.expanded ul li a {
         width: 50%; /* 在小屏设备上每行显示2个成员 */
     }
 }
+
+/* Faculty Mentor Section */
+.mentor-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.mentor {
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.mentor img {
+    width: calc(100vw * 0.15); /* Same image size as members */
+    height: calc(100vw * 0.2);
+    object-fit: cover;
+}
+
+.mentor h3 {
+    margin: 0.5rem 0 0 0;
+}
+
+.mentor p {
+    margin: 0.25rem 0 0 0;
+}
+
+/* Member Profiles (as previously defined) */
+.members-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.member {
+    width: calc(20% - 1rem); /* Each row shows 5 members */
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.member img {
+    width: calc(100vw * 0.15); /* Same image size for consistency */
+    height: calc(100vw * 0.2);
+    object-fit: cover;
+}
+
+.member h3 {
+    margin: 0.5rem 0 0 0;
+}
+
+.member p {
+    margin: 0.25rem 0 0 0;
+}
