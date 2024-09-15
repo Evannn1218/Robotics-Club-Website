@@ -184,6 +184,18 @@ event-module p {
     margin-right: 2rem; /* 图片与文本之间的距离 */
 }
 
+.past-event-module a img {
+    transition: transform 0.3s ease; /* 平滑过渡效果 */
+}
+
+.past-event-module a:hover img {
+    transform: scale(1.1); /* 鼠标悬停时放大 */
+}
+
+.past-event-module a:active img {
+    transform: scale(1.2); /* 点击时进一步放大 */
+}
+
 /* 文本部分居中 */
 .past-event-module .event-text {
     flex: 1; /* 让文本部分占据剩余空间 */
