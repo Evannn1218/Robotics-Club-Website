@@ -164,6 +164,37 @@ event-module p {
     margin: 0.5rem 0 0 0;
 }
 
+/* Past Events 样式修改 */
+.past-event-module {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9; /* 保持与 Upcoming Events 一致的背景色 */
+    padding: 2rem; /* 两倍的内边距 */
+    margin-bottom: 2rem; /* 增加模块间距 */
+    border: 1px solid transparent; /* 保持透明边框 */
+    width: 100%; /* 让模块宽度占满 */
+    height: auto; /* 模块自动适应内容 */
+    box-sizing: border-box;
+}
+
+/* 图片占据模块一半宽度 */
+.past-event-module img {
+    width: 50%; /* 图片占据模块宽度的一半 */
+    height: auto; /* 保持图片的纵横比 */
+    margin-right: 2rem; /* 图片与文本之间的距离 */
+}
+
+/* 文本部分居中 */
+.past-event-module .event-text {
+    flex: 1; /* 让文本部分占据剩余空间 */
+    text-align: center; /* 文本水平居中 */
+    font-size: 1.2rem; /* 放大文本 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 垂直居中对齐文本 */
+}
+
+
 footer {
     background-color: #333;
     color: #fff;
