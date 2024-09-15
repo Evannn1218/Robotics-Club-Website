@@ -565,6 +565,22 @@ nav.expanded ul li a {
     font-size: 1rem !important; /* 扩展时字体大小 */
 }
 
+/* Involvement Fair */
+.z-involve{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.z-involve-img{
+    display: block;
+}
+
+.z-involve-div{
+    display: block;
+}
+
 /* 媒体查询 */
 @media (max-width: 768px) {
     .video-container {
