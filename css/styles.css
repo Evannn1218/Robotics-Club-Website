@@ -296,25 +296,37 @@ form button:active {
 
 /* Faculty Mentor 特殊样式 */
 .faculty-mentor {
-    text-align: center; /* 整体居中 */
-    max-width: 100%; /* 保证内容适应屏幕大小 */
-    margin: 0 auto; /* 水平居中 */
+    display: flex;
+    flex-direction: column; /* 将图片与文本垂直排列 */
+    align-items: center; /* 居中对齐 */
+    text-align: center;
+    max-width: 100%; /* 不限制宽度 */
+    margin: 0 auto; /* 居中布局 */
+}
+
+.faculty-mentor img {
+    width: 250px; /* 增大图片宽度 */
+    height: auto; /* 保持图片比例 */
+    margin-bottom: 1rem; /* 图片与文本之间的间距 */
 }
 
 .faculty-mentor h3 {
-    white-space: nowrap; /* 强制名称在一行显示 */
-    overflow: hidden; 
-    text-overflow: ellipsis; /* 超出部分用省略号显示 */
+    white-space: nowrap; /* 名字强制在一行内显示 */
+    overflow: visible; /* 允许超出部分显示 */
     margin: 0.5rem 0;
 }
 
 .faculty-mentor p {
-    margin: 0.5rem auto; /* 上下留出空间 */
-    max-width: 90%; /* 保证简介内容不超过屏幕宽度 */
-    text-align: center; /* 文字居中 */
-    white-space: normal; /* 允许文字换行 */
-    overflow: visible; /* 保证文字不被截断 */
+    display: block;
+    white-space: nowrap; /* 确保文本不换行 */
+    overflow: visible; /* 不隐藏内容 */
+    margin: 0.25rem auto;
+    max-width: none; /* 允许文本超出容器宽度 */
+    line-height: 1.2; /* 设置适合的行高 */
+    text-align: center; /* 文本居中对齐 */
 }
+
+
 
 /* 为 Faculty Mentor 的头像添加点击放大效果 */
 .faculty-mentor a img {
