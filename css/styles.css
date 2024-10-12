@@ -69,18 +69,56 @@
 
 /* Content styling */
 .background-container-content {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
+    position: relative; /* Changed from absolute to relative */
+    margin: 10px 30px; /* Use margin to create space instead of fixed positioning */
+    color: white; 
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
+    bottom: auto; /* Remove the fixed bottom positioning */
+    left: auto; /* Remove fixed left positioning */
     z-index: 3; /* Ensure the content is above both the image and shadow */
+}
+/* For medium screens (tablets and small desktops) */
+@media (max-width: 1024px) {
+    .background-container-content {
+        margin: 5px 15px; /* Adjust the margin for smaller screens */
+        font-size: 1.2rem; /* Scale down font size */
+    }
+    .background-container {
+        height: 50vh; /* Moderate height for medium-sized screens */
+    }
+}
+
+/* For small screens (phones) */
+@media (max-width: 768px) {
+    .background-container-content {
+        margin: 5px 10px; /* Further reduce margin to fit smaller screens */
+        font-size: 1rem; /* Adjust font size for readability */
+    }
+    .background-container {
+        height: 40vh; /* Reduce the height for smaller screens */
+    }
+
+}
+
+/* For very small screens (small phones) */
+@media (max-width: 480px) {
+    .background-container-content {
+        margin: 2px 5px; /* Minimal margin for very small screens */
+        font-size: 0.9rem; /* Reduce font size for better fit */
+        text-align: center; /* Center-align text for better display on narrow screens */
+    }
+    .background-container {
+        height: 30vh; /* Further reduce the height for very small screens */
+    }
 }
 /* Background image container */
 .background-container {
     position: relative;
     margin: 0 auto;
     width: 100%;
-    height: 62vh;
+    height: auto;
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -105,7 +143,7 @@
 .background-container-content h1 {
     font-family: 'Helvetica', 'Arial', sans-serif;
     font-weight: bold;
-    font-size: 75px; 
+    font-size: 5vw; 
     margin: 0;
     padding: 0; /* Removed unnecessary padding value */
 }
