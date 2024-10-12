@@ -1,0 +1,128 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NYU Shanghai Robotics Club</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header>
+            <a href="https://shanghai.nyu.edu" class="logo">
+                <img src="images/NYUSH logo.png" alt="Robotics Club Logo">
+            </a>
+            <nav>
+                <img src="images/listbutton.png" alt="Menu" class="menu-button">
+                <ul class="hidden">
+                    <li><a href="index-en.html">Home</a></li>
+                    <li><a href="about-en.html">About Us</a></li>
+                    <li><a href="members-en.html">Members</a></li>
+                    <li><a href="events-en.html">Events</a></li>
+                    <li><a href="contact-en.html">Contact Us</a></li>
+                    <li><a href="index-cn.html">中文</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="background-container">
+            <img src="images/Involvement Fair/Cropped Involvement Fair.JPG" alt="Background Image" class="image-with-shadow">
+            <div class="background-container-content">
+                <h1>INVOLVEMENT FAIR!</h1>
+                <h2>September 24th, 2024</h2>
+            </div>
+        </div>
+            <!-- Add a container for the images below the title -->
+            
+        <!--Noelia had modofied it-->
+
+        <div class="eventrecap">
+            <h2>To be Updated!</h2>
+            <p>...</p>
+            <p>...</p>
+            <img src="images/Involvement Fair/Cropped Involvement Fair.JPG" alt="TESOL Group Photo">
+            <p>...</p>
+        </div>
+        
+
+        <!-- Replace the image gallery with clickable columns -->
+        <div class="clickable-columns">
+            <a href="#" class="column">
+                <img src="images/Involvement Fair/Involvement Fair 1.JPG" alt="Annual Report">
+                <div class="column-text">
+                    <h3>Event</h3>
+                    <h2>Arduino Workshop</h2>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+            <a href="#" class="column">
+                <img src="images/Involvement Fair/Involvement Fair 1.JPG" alt="Student Statistics">
+                <div class="column-text">
+                    <h3>Competition</h3>
+                    <h2>VEX</h2>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+            <a href="#" class="column">
+                <img src="images/Involvement Fair/Involvement Fair 1.JPG" alt="Event Report">
+                <div class="column-text">
+                    <h3>EVENT</h3>
+                    <h2>Involvement Fair Highlights</h2>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </div>
+
+
+        <footer>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/company/robotics-club-at-nyu-shanghai">
+                    <img src="images/Linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/nyush_robotics_club/">
+                    <img src="images/Instagram.jpg" alt="Instagram">
+                </a>
+                <a href="wechat-code.html">
+                    <img src="images/WeChat.PNG" alt="WeChat">
+                </a>
+            </div>
+            <p>&copy; 2024 NYU Shanghai Robotics Club</p>
+            <a href="login-en.html" class="admin-login">Admin Login</a>
+        </footer>
+        <script>
+            // test
+            // Function to check and update menu styles based on window size
+            function updateMenuStyles() {
+                const nav = document.querySelector('nav');
+                const navUl = document.querySelector('nav ul');
+                const menuButton = document.querySelector('.menu-button');
+                
+                if (window.innerWidth > 768) {
+                    navUl.classList.remove('hidden');
+                    document.querySelectorAll('nav ul li a').forEach(link => {
+                        link.style.fontSize = '1rem'; // 大屏时字体大小
+                    });
+                    nav.classList.remove('expanded'); // 确保大屏时菜单不处于展开状态
+                } else {
+                    if (!nav.classList.contains('expanded')) {
+                        navUl.classList.add('hidden');
+                    }
+                    document.querySelectorAll('nav ul li a').forEach(link => {
+                        link.style.fontSize = '0.8rem'; // 小屏时字体大小
+                    });
+                }
+            }
+
+            // Update menu styles on window resize
+            window.addEventListener('resize', updateMenuStyles);
+
+            // Initial call to set the correct styles
+            updateMenuStyles();
+
+            // Toggle menu on button click
+            document.querySelector('.menu-button').addEventListener('click', function() {
+                document.querySelector('nav').classList.toggle('expanded');
+                document.querySelector('nav ul').classList.toggle('hidden');
+            });
+        </script>
+    </body>
+    </html>
